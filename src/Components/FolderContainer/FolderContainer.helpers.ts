@@ -1,8 +1,3 @@
-export enum PAGES {
-    LOGIN,
-    REGISTER,
-}
-
 export const descriptions = {
     pl: {
         login: 'zaloguj',

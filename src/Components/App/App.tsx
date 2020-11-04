@@ -1,32 +1,28 @@
 import React from 'react';
-import {css} from 'emotion';
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 import {AppContextProvider} from '../Context/Context';
-import {FolderContainer} from '../FolderConteiner/FolderContainer';
-import '../../helpers/globalCss';
+import {FolderContainer} from '../FolderContainer/FolderContainer';
 import {Header} from '../Header/Header';
-import {CSS_COLORS} from '../../helpers/globalCss';
-
-const header = css({
-    width: '100%',
-    margin: '0 auto',
-    backgroundColor: CSS_COLORS.BACKGROUND,
-});
-
-const test = css({
-    width: '50%',
-    height: '500px',
-    margin: '0 auto',
-});
+import {ROUTES} from '../../helpers/ROUTES';
+import {test} from './App.styles';
+import '../../helpers/globalCss';
 
 export const App = () => {
     return (
-        <AppContextProvider>
-            <Header />
-            <div className={header}>
+        <Router>
+            <AppContextProvider>
                 <div className={test}>
-                    <FolderContainer />
+                    <Header />
+                    <Switch>
+                        <Route path={ROUTES.HOME} exact>
+                            <Redirect to={ROUTES.LOGIN} />
+                        </Route>
+                        <Route path={[ROUTES.LOGIN, ROUTES.REGISTER]}>
+                            <FolderContainer />
+                        </Route>
+                    </Switch>
                 </div>
-            </div>
-        </AppContextProvider>
+            </AppContextProvider>
+        </Router>
     );
 };
