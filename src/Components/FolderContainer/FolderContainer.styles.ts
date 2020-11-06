@@ -4,7 +4,7 @@ import {CSS_COLORS} from '../../helpers/globalCss';
 export const folderStyle = css({
     display: 'grid',
     gridTemplateColumns: '1fr',
-    gridTemplateRows: '2.5rem 12rem',
+    gridTemplateRows: '2.5rem auto',
 });
 
 export const formContainerStyle = css({
