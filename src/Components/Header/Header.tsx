@@ -1,7 +1,7 @@
 import React from 'react';
-import {useAppContex} from '../Context/Context';
 import {flex, buttonStyle, pStyle} from './Header.styles';
-import {LANGS} from '../Context/Contex.helpers';
+import {useAppContex} from '../../hooks/useAppContex';
+import {LANGS} from '../../helpers/types';
 
 export const Header: React.FC = () => {
     const {changeLang} = useAppContex();

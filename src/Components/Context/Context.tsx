@@ -1,29 +1,19 @@
 import React from 'react';
-import {createContext, useContext, useState} from 'react';
-import {ContextInterface} from '../../helpers/types';
-import {defaultValues, LANGS} from './Contex.helpers';
-
-const initialValues: ContextInterface = {
-    ...defaultValues,
-    changeLang: lang => {
-        return {};
-    },
-};
-
-const AppContext = createContext({...initialValues});
+import {AppContext} from '../../context/AppContext';
+import {useState} from 'react';
+import {defaultValues} from './Contex.helpers';
+import {LANGS} from '../../helpers/types';
 
 export const AppContextProvider = (props: any) => {
-    const [lang, setLang] = useState(defaultValues);
+    const [lang, setLang] = useState(defaultValues.lang);
+    const [message, setMassage] = useState(null);
+    const [isFetching, setIsFetching] = useState(false);
 
     const changeLang = (lang: LANGS) => {
-        setLang({lang});
+        setLang(lang);
     };
 
-    const values = {...lang, changeLang};
+    const values = {lang, changeLang, message, setMassage, isFetching, setIsFetching};
 
     return <AppContext.Provider value={values} {...props} />;
-};
-
-export const useAppContex = () => {
-    return useContext(AppContext);
 };
