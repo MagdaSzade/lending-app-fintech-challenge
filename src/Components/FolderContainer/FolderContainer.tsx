@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {NavLink, Route, Switch} from 'react-router-dom';
 import {LoginForm} from '../LoginForm/LoginForm';
 import {RegisterForm} from '../RegisterForm/RegisterForm';
-import {useAppContex} from '../Context/Context';
+import {useAppContex} from '../../hooks/useAppContex';
 import {descriptions} from './FolderContainer.helpers';
 import {
     markerContainerStyle,

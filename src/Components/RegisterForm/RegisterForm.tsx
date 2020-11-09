@@ -4,18 +4,17 @@ import {TextInput} from '../Common/TextInput';
 import {PhoneInput} from '../Common/PhoneInput';
 import {SelectRole} from './RegisterFormSelectRole';
 import {Button} from '@material-ui/core';
-import {useAppContex} from '../Context/Context';
+import {useAppContex} from '../../hooks/useAppContex';
+import {useRegisterNewUser} from '../../hooks/useRegisterNewUser';
 import {initialValues, registerFormValidation, descriptions} from './RegisterForm.helpers';
 import {formContainerStyle} from './RegisterForm.styles';
 
 export const RegisterForm: React.FC = () => {
-    const onSubmit = (values: any) => {
-        console.log(values);
-    };
     const {lang} = useAppContex();
+    const registerUser = useRegisterNewUser();
 
     return (
-        <Formik onSubmit={onSubmit} initialValues={initialValues} validate={registerFormValidation}>
+        <Formik onSubmit={registerUser} initialValues={initialValues} validate={registerFormValidation}>
             {({values: {name, surname, email, phone, password, password2, role}, errors, handleChange, setFieldValue, isValid}) => (
                 <Form className={formContainerStyle}>
                     <SelectRole
