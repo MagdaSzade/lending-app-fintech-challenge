@@ -80,10 +80,7 @@ metadata:
 
 data:
     users: |
-        ZXhhbXBsZTokYXByMSROOG1OUFFKTiRJWTVyZnBTenJEZkszTmN1bkhTbWQvCgo=
-
-
-#encryped username: example, with password: example
+        YWRtaXNpZTokYXByMSRPUW5WUURyaiR0OWpJUVQwQmx0em83L0pUcFdHZlgxCgo=
 
 ---
 apiVersion: traefik.containo.us/v1alpha1
