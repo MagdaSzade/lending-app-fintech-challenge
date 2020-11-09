@@ -23,7 +23,7 @@ spec:
                   imagePullPolicy: Always
                   env:
                       - name: API_BASE_PATH
-                        value: backend2.carpo-team.prod.fintechchallenge.pl
+                        value: placeholder
                   ports:
                       - name: web
                         containerPort: 8080
