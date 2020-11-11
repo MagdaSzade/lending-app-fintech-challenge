@@ -11,6 +11,6 @@ describe('registerNewUser', () => {
         const newUser = newUserFactory.build();
         const request = await registerNewUser(newUser);
         expect(request.status).toBe(200);
-        expect(backend.post).toHaveBeenCalledWith('/users/register', {params: newUser});
+        expect(backend.post).toHaveBeenCalledWith('api/users/register', {body: newUser});
     });
 });

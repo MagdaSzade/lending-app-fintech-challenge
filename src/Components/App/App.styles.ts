@@ -7,8 +7,7 @@ export const header = css({
 });
 
 export const test = css({
-    width: '50%',
-    height: '500px',
+    height: '100vh',
     margin: '0 auto',
     backgroundColor: CSS_COLORS.BACKGROUND,
 });
