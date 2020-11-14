@@ -8,6 +8,8 @@ export enum CSS_COLORS {
     BACKGROUND = '#F5F0F6',
     TEXT_BACKGROUND = '#e3eaa7',
     TEXT_COLOR = '#3e4444',
+    SPINNER_BACKGROUND = 'rgba(64, 93, 39, 0.5)',
+    MESSAGE_BACKGROUND = 'rgba(64, 93, 39, 0.9)',
 }
 
 injectGlobal`
