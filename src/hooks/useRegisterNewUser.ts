@@ -2,6 +2,7 @@ import {useAppContex} from './useAppContex';
 import {registerNewUser} from '../api/apiUser';
 import {NewUserInterface} from '../Components/RegisterForm/RegisterForm.interface';
 import {usePushToHistory} from './usePushToHistory';
+import {ReagisterNewUserDTO} from '../helpers/types';
 
 export const useRegisterNewUser = () => {
     const {setMessage, setIsFetching} = useAppContex();
@@ -9,7 +10,16 @@ export const useRegisterNewUser = () => {
     const registerUser = async (newUser: NewUserInterface) => {
         setIsFetching(true);
         try {
-            const response = await registerNewUser(newUser);
+            const newUserDTO: ReagisterNewUserDTO = {
+                email: newUser.email,
+                password: newUser.password,
+                phone: newUser.phone,
+                name: newUser.name,
+                surname: newUser.surname,
+                roles: [newUser.role],
+            };
+
+            const response = await registerNewUser(newUserDTO);
             if (response.status === 201) {
                 setMessage({
                     type: 'info',

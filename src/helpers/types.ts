@@ -59,3 +59,12 @@ export interface UserBorrowerInterface extends UserInterface {
 export interface UserLenderInterface extends UserInterface {
     ListOfOffers: Array<OfferInterface>;
 }
+
+export interface ReagisterNewUserDTO {
+    name: string;
+    surname: string;
+    email: string;
+    phone: number | undefined;
+    password: string;
+    roles: Array<ROLE>;
+}
