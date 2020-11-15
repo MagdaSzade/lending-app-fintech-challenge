@@ -2,6 +2,7 @@
     "name": "my-app",
     "version": "0.1.0",
     "private": true,
+    "proxy": "https://backend2.carpo-team.sit.fintechchallenge.pl",
     "dependencies": {
         "@material-ui/core": "^4.11.0",
         "@testing-library/jest-dom": "^5.11.0",
