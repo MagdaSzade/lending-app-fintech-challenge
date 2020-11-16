@@ -1,5 +1,5 @@
 import React from 'react';
-import {Formik, Form} from 'formik';
+import {Formik, Form, ErrorMessage} from 'formik';
 import {TextInput} from '../Common/TextInput';
 import {PhoneInput} from '../Common/PhoneInput';
 import {SelectRole} from './RegisterFormSelectRole';
@@ -8,14 +8,16 @@ import {useAppContex} from '../../hooks/useAppContex';
 import {useRegisterNewUser} from '../../hooks/useRegisterNewUser';
 import {initialValues, registerFormValidation, descriptions} from './RegisterForm.helpers';
 import {formContainerStyle} from './RegisterForm.styles';
+import {NewUserInterface} from './RegisterForm.interface';
 
 export const RegisterForm: React.FC = () => {
     const {lang} = useAppContex();
     const registerUser = useRegisterNewUser();
+    const registerFormValidationLang = (values: NewUserInterface) => registerFormValidation(values, lang);
 
     return (
-        <Formik onSubmit={registerUser} initialValues={initialValues} validate={registerFormValidation}>
-            {({values: {name, surname, email, phone, password, password2, role}, errors, handleChange, setFieldValue, isValid}) => (
+        <Formik validateOnBlur onSubmit={registerUser} initialValues={initialValues} validate={registerFormValidationLang}>
+            {({values: {name, surname, email, phone, password, password2, role}, handleChange, setFieldValue, handleBlur, isValid}) => (
                 <Form className={formContainerStyle}>
                     <SelectRole
                         borrower={descriptions[lang].borrower}
@@ -23,39 +25,45 @@ export const RegisterForm: React.FC = () => {
                         value={role}
                         onChange={setFieldValue}
                     />
-                    <TextInput label={descriptions[lang].name} name="name" value={name} onChange={handleChange} error={errors.name} />
+                    <TextInput label={descriptions[lang].name} name="name" value={name} onChange={handleChange} onBlur={handleBlur} />
+                    <ErrorMessage name="name" />
                     <TextInput
                         label={descriptions[lang].surname}
                         name="surname"
                         value={surname}
                         onChange={handleChange}
-                        error={errors.surname}
+                        onBlur={handleBlur}
                     />
-                    <PhoneInput label={descriptions[lang].phone} name="phone" value={phone} onChange={handleChange} error={errors.phone} />
+                    <ErrorMessage name="surname" />
+                    <PhoneInput label={descriptions[lang].phone} name="phone" value={phone} onChange={handleChange} />
+                    <ErrorMessage name="phone" />
                     <TextInput
                         label={descriptions[lang].email}
                         name="email"
                         type="email"
                         value={email}
                         onChange={handleChange}
-                        error={errors.email}
+                        onBlur={handleBlur}
                     />
+                    <ErrorMessage name="email" />
                     <TextInput
                         label={descriptions[lang].password}
                         name="password"
                         value={password}
                         type="password"
                         onChange={handleChange}
-                        error={errors.password}
+                        onBlur={handleBlur}
                     />
+                    <ErrorMessage name="password" />
                     <TextInput
                         label={descriptions[lang].password2}
                         name="password2"
                         value={password2}
                         type="password"
                         onChange={handleChange}
-                        error={errors.password2}
+                        onBlur={handleBlur}
                     />
+                    <ErrorMessage name="password2" />
                     <Button type="submit" disabled={!isValid}>
                         {descriptions[lang].button}
                     </Button>

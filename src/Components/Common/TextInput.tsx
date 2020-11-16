@@ -8,15 +8,15 @@ interface TextInputInterface {
     name: string;
     value: string;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    error?: string;
+    onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
     type?: string;
 }
 
-export const TextInput: React.FC<TextInputInterface> = ({label, name, value, onChange, error, type = 'text'}) => {
+export const TextInput: React.FC<TextInputInterface> = ({label, name, value, onChange, onBlur, type = 'text'}) => {
     return (
         <div className={inputContainer}>
             <label htmlFor={name}>{label}</label>
-            <Input id={name} type={type} onChange={onChange} value={value}></Input>
+            <Input id={name} type={type} onBlur={onBlur} onChange={onChange} value={value}></Input>
         </div>
     );
 };

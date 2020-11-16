@@ -5,17 +5,16 @@ import {ContextInterface} from '../../src/Components/Context/Context.interface';
 
 export const contextInterfaceFactory = Factory.Sync.makeFactory<ContextInterface>({
     lang: LANGS.PL,
-    changeLang: lang => {
-        return;
-    },
+    changeLang: lang => {},
     message: null,
-    setMessage: error => {
-        return;
-    },
+    setMessage: error => {},
     isFetching: false,
-    setIsFetching: isFetching => {
-        return;
-    },
+    setIsFetching: isFetching => {},
+    isLoggedin: false,
+    login: () => {},
+    logout: () => {},
+    user: null,
+    userDataReducer: () => {},
 });
 
 export const newUserFactory = Factory.Sync.makeFactory<NewUserInterface>({
@@ -23,7 +22,7 @@ export const newUserFactory = Factory.Sync.makeFactory<NewUserInterface>({
     surname: 'test_data',
     email: 'test@testdata.pl',
     phone: 222222222,
-    password: 'password',
-    password2: 'password',
+    password: 'password123@',
+    password2: 'password123@',
     role: ROLE.BORROWER,
 });
