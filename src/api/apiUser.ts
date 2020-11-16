@@ -1,11 +1,10 @@
 import {backend} from './backend';
-import {LoginUserInterface} from '../Components/LoginForm/LoginForm.interface';
 import {ReagisterNewUserDTO} from '../helpers/types';
 
 export const registerNewUser = (data: ReagisterNewUserDTO) => {
-    return backend.post('/users/register', data);
+    return backend.post('/api/users/register', data);
 };
 
-export const loginUserApi = (data: LoginUserInterface) => {
+export const loginUserApi = (data: FormData) => {
     return backend.post('/login', data);
 };
