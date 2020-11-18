@@ -23,6 +23,7 @@ export const descriptions = {
         borrower: 'Chcę pożyczyć pieniądze',
         lender: 'Chcę udzielić pożyczki',
         button: 'Załóż konto',
+        buttonDisabled: 'Jeszcze nie można wysłać...',
     },
     en: {
         name: 'User name',
@@ -34,6 +35,7 @@ export const descriptions = {
         borrower: 'I want to borrow money',
         lender: 'I want to grant a loan',
         button: 'Create an account',
+        buttonDisabled: 'Please, correct form data...',
     },
 };
 
@@ -69,10 +71,10 @@ export const registerFormValidation = (values: NewUserInterface, lang: LANGS): F
     if (values.password !== values.password2) {
         errors.password = lang === LANGS.PL ? 'Hasła muszą być jednakowe' : 'Passwords must be identical';
     }
-
-    if (values.phone && values.phone?.toString().length !== 9) {
-        errors.phone = lang === LANGS.PL ? 'Niepoprawny format numeru telefonu' : 'Invalid phone number format';
-    }
+    //
+    //if (values.phone && values.phone?.toString().length !== 9) {
+    //    errors.phone = lang === LANGS.PL ? 'Niepoprawny format //numeru telefonu' : 'Invalid phone number format';
+    //}
 
     return errors;
 };

@@ -1,7 +1,7 @@
 import {backend} from './backend';
-import {ReagisterNewUserDTO} from '../helpers/types';
+import {ReagisterNewUserForm} from '../helpers/types';
 
-export const registerNewUser = (data: ReagisterNewUserDTO) => {
+export const registerNewUser = (data: ReagisterNewUserForm) => {
     return backend.post('/api/users/register', data);
 };
 

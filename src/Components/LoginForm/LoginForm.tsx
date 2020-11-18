@@ -1,15 +1,15 @@
 import React from 'react';
-import {Formik, Form, ErrorMessage} from 'formik';
+import {Formik, Form} from 'formik';
+import {ConfirmButton} from '../Common/ConfirmButton';
 import {TextInput} from '../Common/TextInput';
-import {Button} from '@material-ui/core';
-import {useAppContex} from '../../hooks/useAppContex';
+import {useAppContext} from '../../hooks/useAppContext';
 import {initialValues, loginFormValidation, descriptions} from './LoginForm.helpers';
 import {formContainerStyle} from './LoginForm.styles';
 import {useLoginNewUser} from '../../hooks/useLoginNewUser';
 import {LoginUserInterface} from './LoginForm.interface';
 
 export const LoginForm: React.FC = () => {
-    const {lang} = useAppContex();
+    const {lang} = useAppContext();
     const login = useLoginNewUser();
     const loginFormValidationLang = (values: LoginUserInterface) => loginFormValidation(values, lang);
 
@@ -25,7 +25,6 @@ export const LoginForm: React.FC = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                     />
-                    <ErrorMessage name="email" />
                     <TextInput
                         label={descriptions[lang].password}
                         name="password"
@@ -34,10 +33,7 @@ export const LoginForm: React.FC = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                     />
-                    <ErrorMessage name="password" />
-                    <Button type="submit" disabled={!isValid}>
-                        {descriptions[lang].button}
-                    </Button>
+                    <ConfirmButton isValid={isValid} inValidText={descriptions[lang].buttonInValid} validText={descriptions[lang].button} />
                 </Form>
             )}
         </Formik>

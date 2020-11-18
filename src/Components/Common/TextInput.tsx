@@ -2,6 +2,8 @@ import React from 'react';
 import {Input} from '@material-ui/core';
 import {ChangeEvent} from 'react';
 import {inputContainer} from './common.styles';
+import {ErrorMessage} from 'formik';
+import {ErrorDisplay} from './ErrorDisplay';
 
 interface TextInputInterface {
     label: string;
@@ -17,6 +19,7 @@ export const TextInput: React.FC<TextInputInterface> = ({label, name, value, onC
         <div className={inputContainer}>
             <label htmlFor={name}>{label}</label>
             <Input id={name} type={type} onBlur={onBlur} onChange={onChange} value={value}></Input>
+            <ErrorMessage name={name} render={ErrorDisplay} />
         </div>
     );
 };

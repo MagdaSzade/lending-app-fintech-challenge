@@ -59,7 +59,7 @@ export interface UserLenderInterface extends UserInterface {
     ListOfOffers: Array<OfferInterface>;
 }
 
-export interface ReagisterNewUserDTO {
+export interface ReagisterNewUserForm {
     name: string;
     surname: string;
     email: string;

@@ -51,10 +51,4 @@ describe('registerFormValidation', () => {
         const errors = registerFormValidation(newUser, LANGS.PL);
         expect(errors.password).toBeDefined();
     });
-
-    it('should return errors.phone if phone has less than 9 numbers', () => {
-        const newUser = newUserFactory.build({phone: 123});
-        const errors = registerFormValidation(newUser, LANGS.PL);
-        expect(errors.phone).toBeDefined();
-    });
 });

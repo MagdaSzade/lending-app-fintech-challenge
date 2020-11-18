@@ -9,7 +9,7 @@ import {RegisterForm} from '../../../src/Components/RegisterForm/RegisterForm';
 import {FolderContainer} from '../../../src/Components/FolderContainer/FolderContainer';
 import {ROUTES} from '../../../src/helpers/ROUTES';
 import {contextInterfaceFactory} from '../../helpers/factories';
-import {useAppContex} from '../../../src/hooks/useAppContex';
+import {useAppContext} from '../../../src/hooks/useAppContext';
 import {LANGS} from '../../../src/helpers/types';
 
 export const renderWithRouter = (ui: React.ReactNode, entries?: string[]) => {
@@ -20,7 +20,7 @@ export const renderWithRouter = (ui: React.ReactNode, entries?: string[]) => {
 
 jest.mock('../../../src/Components/LoginForm/LoginForm');
 jest.mock('../../../src/Components/RegisterForm/RegisterForm');
-jest.mock('../../../src/hooks/useAppContex');
+jest.mock('../../../src/hooks/useAppContext');
 
 describe('FolderComponent', () => {
     beforeEach(() => {
@@ -29,7 +29,7 @@ describe('FolderComponent', () => {
     });
 
     it('should render two marks and loginForm when on ROUTES.LOGIN', () => {
-        mocked(useAppContex).mockReturnValue(contextInterfaceFactory.build());
+        mocked(useAppContext).mockReturnValue(contextInterfaceFactory.build());
         renderWithRouter(<FolderContainer />, [ROUTES.LOGIN]);
         expect(screen.getByRole('link', {name: /zaloguj/i})).toBeInTheDocument();
         expect(screen.getByRole('link', {name: /zarejestruj/i})).toBeInTheDocument();
@@ -37,7 +37,7 @@ describe('FolderComponent', () => {
     });
 
     it('should render two marks and registerForm when on ROUTES.REGISTER', () => {
-        mocked(useAppContex).mockReturnValue(contextInterfaceFactory.build());
+        mocked(useAppContext).mockReturnValue(contextInterfaceFactory.build());
         renderWithRouter(<FolderContainer />, [ROUTES.REGISTER]);
         expect(screen.getByRole('link', {name: /zaloguj/i})).toBeInTheDocument();
         expect(screen.getByRole('link', {name: /zarejestruj/i})).toBeInTheDocument();
@@ -45,14 +45,14 @@ describe('FolderComponent', () => {
     });
 
     it('should change to en if appContext give en lang', () => {
-        mocked(useAppContex).mockReturnValue(contextInterfaceFactory.build({lang: LANGS.EN}));
+        mocked(useAppContext).mockReturnValue(contextInterfaceFactory.build({lang: LANGS.EN}));
         renderWithRouter(<FolderContainer />);
         expect(screen.getByRole('link', {name: /login/i})).toBeInTheDocument();
         expect(screen.getByRole('link', {name: /register/i})).toBeInTheDocument();
     });
 
     it('should change from loginForm to registerForm after click on register link', () => {
-        mocked(useAppContex).mockReturnValue(contextInterfaceFactory.build({lang: LANGS.EN}));
+        mocked(useAppContext).mockReturnValue(contextInterfaceFactory.build({lang: LANGS.EN}));
         const {history} = renderWithRouter(<FolderContainer />, [ROUTES.LOGIN]);
         userEvent.click(screen.getByRole('link', {name: /register/i}));
         expect(screen.getByText('RegisterForm')).toBeInTheDocument();
@@ -60,7 +60,7 @@ describe('FolderComponent', () => {
     });
 
     it('should change from registerForm to loginForm after click on login link', () => {
-        mocked(useAppContex).mockReturnValue(contextInterfaceFactory.build({lang: LANGS.EN}));
+        mocked(useAppContext).mockReturnValue(contextInterfaceFactory.build({lang: LANGS.EN}));
         const {history} = renderWithRouter(<FolderContainer />, [ROUTES.REGISTER]);
         userEvent.click(screen.getByRole('link', {name: /login/i}));
         expect(screen.getByText('LoginForm')).toBeInTheDocument();
@@ -68,7 +68,7 @@ describe('FolderComponent', () => {
     });
 
     it('should show loginForm after click on register link then login link', () => {
-        mocked(useAppContex).mockReturnValue(contextInterfaceFactory.build({lang: LANGS.EN}));
+        mocked(useAppContext).mockReturnValue(contextInterfaceFactory.build({lang: LANGS.EN}));
         const {history} = renderWithRouter(<FolderContainer />, [ROUTES.LOGIN]);
         userEvent.click(screen.getByRole('link', {name: /register/i}));
         userEvent.click(screen.getByRole('link', {name: /login/i}));
@@ -77,7 +77,7 @@ describe('FolderComponent', () => {
     });
 
     it('should show registerForm after click on login link then register link', () => {
-        mocked(useAppContex).mockReturnValue(contextInterfaceFactory.build({lang: LANGS.EN}));
+        mocked(useAppContext).mockReturnValue(contextInterfaceFactory.build({lang: LANGS.EN}));
         const {history} = renderWithRouter(<FolderContainer />, [ROUTES.REGISTER]);
         userEvent.click(screen.getByRole('link', {name: /login/i}));
         userEvent.click(screen.getByRole('link', {name: /register/i}));

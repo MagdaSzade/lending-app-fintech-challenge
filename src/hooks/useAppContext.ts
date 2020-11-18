@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import {AppContext} from '../Components/Context/Contex.helpers';
 
-export const useAppContex = () => {
+export const useAppContext = () => {
     return useContext(AppContext);
 };

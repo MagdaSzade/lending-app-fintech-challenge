@@ -12,11 +12,13 @@ export const descriptions = {
         email: 'Email',
         password: 'Hasło',
         button: 'Zaloguj',
+        buttonInValid: 'Uzupełnij poprawnie',
     },
     en: {
         email: 'Email',
         password: 'Password',
         button: 'Log in',
+        buttonInValid: 'form is not valid',
     },
 };
 

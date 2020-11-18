@@ -1,10 +1,10 @@
 import React from 'react';
 import {flex, buttonStyle, pStyle} from './Header.styles';
-import {useAppContex} from '../../hooks/useAppContex';
+import {useAppContext} from '../../hooks/useAppContext';
 import {LANGS} from '../../helpers/types';
 
 export const Header: React.FC = () => {
-    const {changeLang} = useAppContex();
+    const {changeLang} = useAppContext();
 
     return (
         <div className={flex}>

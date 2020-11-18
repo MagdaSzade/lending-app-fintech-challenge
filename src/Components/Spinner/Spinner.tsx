@@ -1,9 +1,9 @@
 import React from 'react';
-import {useAppContex} from '../../hooks/useAppContex';
+import {useAppContext} from '../../hooks/useAppContext';
 import {spinnerConteinerStyle, spinnerStyle} from './Spinner.styles';
 
 export const Spinner: React.FC = () => {
-    const {isFetching} = useAppContex();
+    const {isFetching} = useAppContext();
 
     if (isFetching) {
         return (
@@ -14,6 +14,6 @@ export const Spinner: React.FC = () => {
             </div>
         );
     } else {
-        return <></>;
+        return null;
     }
 };

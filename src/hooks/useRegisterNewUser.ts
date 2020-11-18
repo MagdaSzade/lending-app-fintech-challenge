@@ -1,16 +1,18 @@
-import {useAppContex} from './useAppContex';
+import {useAppContext} from './useAppContext';
 import {registerNewUser} from '../api/apiUser';
 import {NewUserInterface} from '../Components/RegisterForm/RegisterForm.interface';
 import {usePushToHistory} from './usePushToHistory';
-import {ReagisterNewUserDTO} from '../helpers/types';
+import {ReagisterNewUserForm} from '../helpers/types';
+import {ROUTES} from '../helpers/ROUTES';
+import {fetchAPIError} from '../helpers/helpersText';
 
 export const useRegisterNewUser = () => {
-    const {setMessage, setIsFetching} = useAppContex();
+    const {setMessage, setIsFetching} = useAppContext();
     const pushToHistory = usePushToHistory();
     const registerUser = async (newUser: NewUserInterface) => {
         setIsFetching(true);
         try {
-            const newUserDTO: ReagisterNewUserDTO = {
+            const newUserForm: ReagisterNewUserForm = {
                 email: newUser.email,
                 password: newUser.password,
                 phone: newUser.phone,
@@ -19,7 +21,7 @@ export const useRegisterNewUser = () => {
                 roles: [newUser.role],
             };
 
-            const response = await registerNewUser(newUserDTO);
+            const response = await registerNewUser(newUserForm);
             if (response.status === 201) {
                 setMessage({
                     type: 'info',
@@ -32,30 +34,12 @@ export const useRegisterNewUser = () => {
                         en: 'login',
                     },
                 });
-            } else if (response.status === 200) {
-                setMessage({
-                    type: 'info',
-                    title: {
-                        pl: 'podany email już jest zarejestrowany',
-                        en: 'given email is already registered',
-                    },
-                });
             }
         } catch (error) {
-            setMessage({
-                type: 'error',
-                title: {
-                    pl: 'Coś poszło nie tak',
-                    en: 'Something went wrong',
-                },
-                message: {
-                    pl: 'spróbuj ponownie później',
-                    en: 'try again later',
-                },
-            });
+            setMessage(fetchAPIError);
         } finally {
             setIsFetching(false);
-            pushToHistory('/login');
+            pushToHistory(ROUTES.LOGIN);
         }
     };
     return registerUser;
