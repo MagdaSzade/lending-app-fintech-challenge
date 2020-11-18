@@ -1,25 +1,14 @@
 import React, {useCallback, useMemo} from 'react';
 import {useState} from 'react';
-import {defaultValues, AppContext} from './Contex.helpers';
+import {AppContext} from './Contex.helpers';
 import {LANGS, Message} from '../../helpers/types';
 
 export const AppContextProvider = (props: any) => {
-    const [lang, setLang] = useState(defaultValues.lang);
-    const [message, setMessageState] = useState<Message | null>(null);
-    const [isFetching, setIsFetchingState] = useState(false);
+    const [token, setToken] = useState<string | undefined>(undefined);
+    const [lang, changeLang] = useState(LANGS.PL);
+    const [message, setMessage] = useState<Message | null>(null);
+    const [isFetching, setIsFetching] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    const changeLang = useCallback((lang: LANGS) => {
-        setLang(lang);
-    }, []);
-
-    const setIsFetching = useCallback((isFetchingNewState: boolean) => {
-        setIsFetchingState(isFetchingNewState);
-    }, []);
-
-    const setMessage = useCallback((newMessage: Message | null) => {
-        setMessageState(newMessage);
-    }, []);
 
     const login = useCallback(() => {
         setIsLoggedIn(true);
@@ -40,8 +29,10 @@ export const AppContextProvider = (props: any) => {
             isLoggedIn,
             login,
             logout,
+            token,
+            setToken,
         };
-    }, [lang, changeLang, message, setMessage, isFetching, setIsFetching, isLoggedIn, login, logout]);
+    }, [lang, changeLang, message, setMessage, isFetching, setIsFetching, isLoggedIn, login, logout, token, setToken]);
 
     return <AppContext.Provider value={values} {...props} />;
 };

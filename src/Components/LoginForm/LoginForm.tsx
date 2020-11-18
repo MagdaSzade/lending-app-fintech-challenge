@@ -1,19 +1,21 @@
 import React from 'react';
 import {Formik, Form} from 'formik';
+import {ConfirmButton} from '../Common/ConfirmButton';
 import {TextInput} from '../Common/TextInput';
-import {Button} from '@material-ui/core';
-import {useAppContex} from '../../hooks/useAppContex';
+import {useAppContext} from '../../hooks/useAppContext';
 import {initialValues, loginFormValidation, descriptions} from './LoginForm.helpers';
 import {formContainerStyle} from './LoginForm.styles';
 import {useLoginNewUser} from '../../hooks/useLoginNewUser';
+import {LoginUserInterface} from './LoginForm.interface';
 
 export const LoginForm: React.FC = () => {
-    const {lang} = useAppContex();
+    const {lang} = useAppContext();
     const login = useLoginNewUser();
+    const loginFormValidationLang = (values: LoginUserInterface) => loginFormValidation(values, lang);
 
     return (
-        <Formik onSubmit={login} initialValues={initialValues} validate={loginFormValidation}>
-            {({values: {email, password}, errors, handleChange, isValid}) => (
+        <Formik onSubmit={login} initialValues={initialValues} validate={loginFormValidationLang}>
+            {({values: {email, password}, handleBlur, handleChange, isValid}) => (
                 <Form className={formContainerStyle}>
                     <TextInput
                         label={descriptions[lang].email}
@@ -21,7 +23,7 @@ export const LoginForm: React.FC = () => {
                         type="email"
                         value={email}
                         onChange={handleChange}
-                        error={errors.email}
+                        onBlur={handleBlur}
                     />
                     <TextInput
                         label={descriptions[lang].password}
@@ -29,11 +31,9 @@ export const LoginForm: React.FC = () => {
                         value={password}
                         type="password"
                         onChange={handleChange}
-                        error={errors.password}
+                        onBlur={handleBlur}
                     />
-                    <Button type="submit" disabled={!isValid}>
-                        {descriptions[lang].button}
-                    </Button>
+                    <ConfirmButton isValid={isValid} inValidText={descriptions[lang].buttonInValid} validText={descriptions[lang].button} />
                 </Form>
             )}
         </Formik>

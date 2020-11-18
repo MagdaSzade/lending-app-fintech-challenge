@@ -3,19 +3,21 @@ import {Formik, Form} from 'formik';
 import {TextInput} from '../Common/TextInput';
 import {PhoneInput} from '../Common/PhoneInput';
 import {SelectRole} from './RegisterFormSelectRole';
-import {Button} from '@material-ui/core';
-import {useAppContex} from '../../hooks/useAppContex';
+import {useAppContext} from '../../hooks/useAppContext';
 import {useRegisterNewUser} from '../../hooks/useRegisterNewUser';
 import {initialValues, registerFormValidation, descriptions} from './RegisterForm.helpers';
 import {formContainerStyle} from './RegisterForm.styles';
+import {NewUserInterface} from './RegisterForm.interface';
+import {ConfirmButton} from '../Common/ConfirmButton';
 
 export const RegisterForm: React.FC = () => {
-    const {lang} = useAppContex();
+    const {lang} = useAppContext();
     const registerUser = useRegisterNewUser();
+    const registerFormValidationLang = (values: NewUserInterface) => registerFormValidation(values, lang);
 
     return (
-        <Formik onSubmit={registerUser} initialValues={initialValues} validate={registerFormValidation}>
-            {({values: {name, surname, email, phone, password, password2, role}, errors, handleChange, setFieldValue, isValid}) => (
+        <Formik validateOnBlur onSubmit={registerUser} initialValues={initialValues} validate={registerFormValidationLang}>
+            {({values: {name, surname, email, phone, password, password2, role}, handleChange, setFieldValue, handleBlur, isValid}) => (
                 <Form className={formContainerStyle}>
                     <SelectRole
                         borrower={descriptions[lang].borrower}
@@ -23,22 +25,22 @@ export const RegisterForm: React.FC = () => {
                         value={role}
                         onChange={setFieldValue}
                     />
-                    <TextInput label={descriptions[lang].name} name="name" value={name} onChange={handleChange} error={errors.name} />
+                    <TextInput label={descriptions[lang].name} name="name" value={name} onChange={handleChange} onBlur={handleBlur} />
                     <TextInput
                         label={descriptions[lang].surname}
                         name="surname"
                         value={surname}
                         onChange={handleChange}
-                        error={errors.surname}
+                        onBlur={handleBlur}
                     />
-                    <PhoneInput label={descriptions[lang].phone} name="phone" value={phone} onChange={handleChange} error={errors.phone} />
+                    <PhoneInput label={descriptions[lang].phone} name="phone" value={phone} onChange={handleChange} />
                     <TextInput
                         label={descriptions[lang].email}
                         name="email"
                         type="email"
                         value={email}
                         onChange={handleChange}
-                        error={errors.email}
+                        onBlur={handleBlur}
                     />
                     <TextInput
                         label={descriptions[lang].password}
@@ -46,7 +48,7 @@ export const RegisterForm: React.FC = () => {
                         value={password}
                         type="password"
                         onChange={handleChange}
-                        error={errors.password}
+                        onBlur={handleBlur}
                     />
                     <TextInput
                         label={descriptions[lang].password2}
@@ -54,11 +56,13 @@ export const RegisterForm: React.FC = () => {
                         value={password2}
                         type="password"
                         onChange={handleChange}
-                        error={errors.password2}
+                        onBlur={handleBlur}
                     />
-                    <Button type="submit" disabled={!isValid}>
-                        {descriptions[lang].button}
-                    </Button>
+                    <ConfirmButton
+                        isValid={isValid}
+                        inValidText={descriptions[lang].buttonDisabled}
+                        validText={descriptions[lang].button}
+                    />
                 </Form>
             )}
         </Formik>

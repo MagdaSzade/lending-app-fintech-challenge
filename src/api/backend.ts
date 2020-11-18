@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const backend = axios.create({
-    baseURL: '/api',
+    baseURL: '',
     auth: {
         username: 'admisie',
         password: 'mis_yogi',

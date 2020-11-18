@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {NavLink, Route, Switch, useLocation} from 'react-router-dom';
 import {LoginForm} from '../LoginForm/LoginForm';
 import {RegisterForm} from '../RegisterForm/RegisterForm';
-import {useAppContex} from '../../hooks/useAppContex';
+import {useAppContext} from '../../hooks/useAppContext';
 import {descriptions} from './FolderContainer.helpers';
 import {
     markerContainerStyle,
@@ -25,7 +25,7 @@ export const FolderContainer: React.FC = () => {
     const {pathname} = useLocation();
     const routeStyle = pathname === ROUTES.LOGIN ? cx(formContainerStyle, loginStyle) : cx(formContainerStyle, registerStyle);
     const [formStyle, setFormStyle] = useState(routeStyle);
-    const {lang} = useAppContex();
+    const {lang} = useAppContext();
 
     useEffect(() => {
         setFormStyle(routeStyle);

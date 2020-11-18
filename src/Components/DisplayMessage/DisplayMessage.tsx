@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {AiOutlineCloseCircle} from 'react-icons/ai';
-import {useAppContex} from '../../hooks/useAppContex';
+import {useAppContext} from '../../hooks/useAppContext';
 import {messageContainerStyle, messageStyle, titleStyle, textStyle, closeMessageStyle, xStyle} from './DisplayMessage.styles';
 
 export const DisplayMessage: React.FC = () => {
     const [displayedMessage, setText] = useState({title: '', text: ''});
-    const {message, setMessage, lang} = useAppContex();
+    const {message, setMessage, lang} = useAppContext();
 
     useEffect(() => {
         if (message) {

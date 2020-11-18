@@ -8,16 +8,15 @@ export enum LANGS {
     EN = 'en',
 }
 
+export interface LangInterface {
+    pl: string;
+    en: string;
+}
+
 export interface Message {
     type: 'error' | 'info';
-    title: {
-        pl: string;
-        en: string;
-    };
-    message?: {
-        pl: string;
-        en: string;
-    };
+    title: LangInterface;
+    message?: LangInterface;
 }
 
 export interface UserMessageInterface {
@@ -60,7 +59,7 @@ export interface UserLenderInterface extends UserInterface {
     ListOfOffers: Array<OfferInterface>;
 }
 
-export interface ReagisterNewUserDTO {
+export interface ReagisterNewUserForm {
     name: string;
     surname: string;
     email: string;
