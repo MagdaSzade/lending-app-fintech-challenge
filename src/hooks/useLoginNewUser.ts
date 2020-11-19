@@ -2,9 +2,13 @@ import {LoginUserInterface} from '../Components/LoginForm/LoginForm.interface';
 import {loginUserApi} from '../api/apiUser';
 import {useAppContext} from './useAppContext';
 import {fetchAPIError, loginSuccesText} from '../helpers/helpersText';
+import {usePushToHistory} from './usePushToHistory';
+import {ROUTES} from '../helpers/ROUTES';
 
 export const useLoginNewUser = () => {
     const {login, setIsFetching, setMessage} = useAppContext();
+    const pushToHistory = usePushToHistory();
+
     const loginUser = async (userData: LoginUserInterface) => {
         const bodyFormData = new window.FormData();
         bodyFormData.append('username', userData.email);
@@ -15,11 +19,13 @@ export const useLoginNewUser = () => {
             window.sessionStorage.setItem('auth', response.headers.authorization);
             setMessage(loginSuccesText);
             login();
+            pushToHistory(ROUTES.USER_HOME);
         } catch (err) {
             setMessage(fetchAPIError);
         } finally {
             setIsFetching(false);
         }
     };
+
     return loginUser;
 };
