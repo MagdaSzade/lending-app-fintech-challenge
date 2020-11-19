@@ -1,14 +1,16 @@
 import {css} from 'emotion';
 import {CSS_COLORS} from '../../helpers/globalCss';
 
+export const headerStyle = css({
+    display: 'flex',
+    justifyContent: 'flex-end',
+});
+
 export const flex = css({
     display: 'flex',
-    margin: '0 auto',
     padding: '1rem',
-    width: '80%',
     justifyContent: 'flex-end',
     alignItems: 'center',
-    minWidth: '360px',
 });
 
 export const buttonStyle = css({

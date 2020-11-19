@@ -8,13 +8,11 @@ const initialValues: ContextInterface = {
     message: null,
     isLoggedin: false,
     user: null,
-    token: undefined,
     changeLang: lang => {},
     setMessage: message => {},
     setIsFetching: isFetching => {},
     login: () => {},
     logout: () => {},
-    setToken: () => {},
     userDataReducer: () => {},
 };
 

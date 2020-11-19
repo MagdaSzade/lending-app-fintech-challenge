@@ -10,8 +10,6 @@ export interface ContextInterface {
     isLoggedin: boolean;
     login: () => void;
     logout: () => void;
-    token: string | undefined;
-    setToken: (token: string | undefined) => void;
     user: UserBorrowerInterface | UserLenderInterface | null;
     userDataReducer: () => void;
 }
