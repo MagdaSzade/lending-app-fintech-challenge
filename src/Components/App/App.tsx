@@ -1,6 +1,8 @@
 import React from 'react';
-import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import {AppContextProvider} from '../Context/Context';
+import {AuthRoute} from '../Routes/AuthRoute';
+import {NoAuthRoute} from '../Routes/NoAuthRoute';
 import {FolderContainer} from '../FolderContainer/FolderContainer';
 import {Header} from '../Header/Header';
 import {Spinner} from '../Spinner/Spinner';
@@ -8,6 +10,7 @@ import {DisplayMessage} from '../DisplayMessage/DisplayMessage';
 import {ROUTES} from '../../helpers/ROUTES';
 import {test} from './App.styles';
 import '../../helpers/globalCss';
+import {UserHomePage} from '../UserHomePage/UserHomePage';
 
 export const App = () => {
     return (
@@ -19,9 +22,12 @@ export const App = () => {
                         <Route path={ROUTES.HOME} exact>
                             <Redirect to={ROUTES.LOGIN} />
                         </Route>
-                        <Route path={[ROUTES.LOGIN, ROUTES.REGISTER]}>
+                        <NoAuthRoute path={[ROUTES.LOGIN, ROUTES.REGISTER]}>
                             <FolderContainer />
-                        </Route>
+                        </NoAuthRoute>
+                        <AuthRoute path={ROUTES.USER_HOME}>
+                            <UserHomePage />
+                        </AuthRoute>
                     </Switch>
                     <DisplayMessage />
                     <Spinner />
