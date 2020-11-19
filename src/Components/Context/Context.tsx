@@ -4,17 +4,17 @@ import {AppContext} from './Contex.helpers';
 import {LANGS, Message} from '../../helpers/types';
 
 export const AppContextProvider = (props: any) => {
-    const [token, setToken] = useState<string | undefined>(undefined);
     const [lang, changeLang] = useState(LANGS.PL);
     const [message, setMessage] = useState<Message | null>(null);
     const [isFetching, setIsFetching] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedin, setIsLoggedIn] = useState<boolean>(window.sessionStorage.getItem('auth') ? true : false);
 
     const login = useCallback(() => {
         setIsLoggedIn(true);
     }, []);
 
     const logout = useCallback(() => {
+        window.sessionStorage.clear();
         setIsLoggedIn(false);
     }, []);
 
@@ -26,13 +26,11 @@ export const AppContextProvider = (props: any) => {
             setMessage,
             isFetching,
             setIsFetching,
-            isLoggedIn,
+            isLoggedin,
             login,
             logout,
-            token,
-            setToken,
         };
-    }, [lang, changeLang, message, setMessage, isFetching, setIsFetching, isLoggedIn, login, logout, token, setToken]);
+    }, [lang, changeLang, message, setMessage, isFetching, setIsFetching, isLoggedin, login, logout]);
 
     return <AppContext.Provider value={values} {...props} />;
 };

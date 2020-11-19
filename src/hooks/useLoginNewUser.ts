@@ -4,7 +4,7 @@ import {useAppContext} from './useAppContext';
 import {fetchAPIError, loginSuccesText} from '../helpers/helpersText';
 
 export const useLoginNewUser = () => {
-    const {login, setToken, setIsFetching, setMessage} = useAppContext();
+    const {login, setIsFetching, setMessage} = useAppContext();
     const loginUser = async (userData: LoginUserInterface) => {
         const bodyFormData = new window.FormData();
         bodyFormData.append('username', userData.email);
@@ -12,9 +12,9 @@ export const useLoginNewUser = () => {
         setIsFetching(true);
         try {
             const response = await loginUserApi(bodyFormData);
-            login();
-            setToken(response.headers.authorization);
+            window.sessionStorage.setItem('auth', response.headers.authorization);
             setMessage(loginSuccesText);
+            login();
         } catch (err) {
             setMessage(fetchAPIError);
         } finally {
