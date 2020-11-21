@@ -4,6 +4,8 @@ import {CSS_COLORS} from '../../helpers/globalCss';
 export const headerStyle = css({
     display: 'flex',
     justifyContent: 'flex-end',
+    maxWidth: '750px',
+    margin: '0 auto',
 });
 
 export const flex = css({

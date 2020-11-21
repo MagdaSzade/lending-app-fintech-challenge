@@ -10,6 +10,6 @@ export const NoAuthRoute: React.FC<RoutInterface> = ({path, children}) => {
     if (!isLoggedin) {
         return <ReactRoute path={path}>{children}</ReactRoute>;
     } else {
-        return <Redirect to={ROUTES.USER_HOME} />;
+        return <Redirect to={ROUTES.USER_MESSAGES} />;
     }
 };
