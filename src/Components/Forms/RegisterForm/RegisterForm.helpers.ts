@@ -1,6 +1,6 @@
 import {NewUserInterface} from './RegisterForm.interface';
 import {FormikErrors} from 'formik';
-import {LANGS, ROLE} from '../../helpers/types';
+import {LANGS, ROLE} from '../../../helpers/types';
 
 export const initialValues: NewUserInterface = {
     name: '',

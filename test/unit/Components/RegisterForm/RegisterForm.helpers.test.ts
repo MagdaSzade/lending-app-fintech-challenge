@@ -1,4 +1,4 @@
-import {registerFormValidation} from '../../../../src/Components/RegisterForm/RegisterForm.helpers';
+import {registerFormValidation} from '../../../../src/Components/Forms/RegisterForm/RegisterForm.helpers';
 import {LANGS} from '../../../../src/helpers/types';
 import {newUserFactory} from '../../../helpers/factories';
 

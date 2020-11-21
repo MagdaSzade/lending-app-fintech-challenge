@@ -1,6 +1,6 @@
 import {useAppContext} from './useAppContext';
 import {registerNewUser} from '../api/apiUser';
-import {NewUserInterface} from '../Components/RegisterForm/RegisterForm.interface';
+import {NewUserInterface} from '../Components/Forms/RegisterForm/RegisterForm.interface';
 import {usePushToHistory} from './usePushToHistory';
 import {ReagisterNewUserForm} from '../helpers/types';
 import {ROUTES} from '../helpers/ROUTES';

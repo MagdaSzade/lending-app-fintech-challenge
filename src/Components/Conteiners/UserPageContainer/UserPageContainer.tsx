@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import {ROUTES} from '../../helpers/ROUTES';
-import {NavBar} from '../NavBar/NavBar';
+import {ROUTES} from '../../../helpers/ROUTES';
+import {NavBar} from '../../NavBar/NavBar';
 import {userContainerStyle} from './UserPageContainer.styles';
 
 export const UserPageContainer: React.FC = () => {

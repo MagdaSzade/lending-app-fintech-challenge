@@ -4,13 +4,13 @@ import {createMemoryHistory} from 'history';
 import {render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import {mocked} from 'ts-jest/utils';
-import {LoginForm} from '../../../src/Components/LoginForm/LoginForm';
-import {RegisterForm} from '../../../src/Components/RegisterForm/RegisterForm';
-import {FolderContainer} from '../../../src/Components/FolderContainer/FolderContainer';
 import {ROUTES} from '../../../src/helpers/ROUTES';
 import {contextInterfaceFactory} from '../../helpers/factories';
 import {useAppContext} from '../../../src/hooks/useAppContext';
 import {LANGS} from '../../../src/helpers/types';
+import {LoginForm} from '../../../src/Components/Forms/LoginForm/LoginForm';
+import {RegisterForm} from '../../../src/Components/Forms/RegisterForm/RegisterForm';
+import {FolderContainer} from '../../../src/Components/Conteiners/FolderContainer/FolderContainer';
 
 export const renderWithRouter = (ui: React.ReactNode, entries?: string[]) => {
     const history = createMemoryHistory({initialEntries: entries});
@@ -18,8 +18,8 @@ export const renderWithRouter = (ui: React.ReactNode, entries?: string[]) => {
     return {...renderResult, history};
 };
 
-jest.mock('../../../src/Components/LoginForm/LoginForm');
-jest.mock('../../../src/Components/RegisterForm/RegisterForm');
+jest.mock('../../../src/Components/Forms/LoginForm/LoginForm');
+jest.mock('../../../src/Components/Forms/RegisterForm/RegisterForm');
 jest.mock('../../../src/hooks/useAppContext');
 
 describe('FolderComponent', () => {

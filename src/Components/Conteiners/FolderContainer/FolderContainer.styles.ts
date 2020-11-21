@@ -1,5 +1,5 @@
 import {css} from 'emotion';
-import {CSS_COLORS} from '../../helpers/globalCss';
+import {CSS_COLORS} from '../../../helpers/globalCss';
 
 export const folderStyle = css({
     display: 'grid',

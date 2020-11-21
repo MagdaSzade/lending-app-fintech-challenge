@@ -1,4 +1,4 @@
-import {LoginUserInterface} from '../Components/LoginForm/LoginForm.interface';
+import {LoginUserInterface} from '../Components/Forms/LoginForm/LoginForm.interface';
 import {loginUserApi} from '../api/apiUser';
 import {useAppContext} from './useAppContext';
 import {fetchAPIError, loginSuccesText} from '../helpers/helpersText';

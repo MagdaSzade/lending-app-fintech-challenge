@@ -1,6 +1,6 @@
 import React from 'react';
 import {FiCircle, FiCheckCircle} from 'react-icons/fi';
-import {ROLE} from '../../helpers/types';
+import {ROLE} from '../../../helpers/types';
 import {radioContainerStyle, radioStyle} from './RegisterForm.styles';
 
 interface SelectRoleInterface {
