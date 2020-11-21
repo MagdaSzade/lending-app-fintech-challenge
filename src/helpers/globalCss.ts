@@ -10,6 +10,7 @@ export enum CSS_COLORS {
     TEXT_COLOR = '#3e4444',
     SPINNER_BACKGROUND = 'rgba(64, 93, 39, 0.5)',
     MESSAGE_BACKGROUND = 'rgba(64, 93, 39, 0.9)',
+    USER_BACKGROUND = 'rgba(154, 205, 50, 0.6)',
 }
 
 injectGlobal`
