@@ -7,13 +7,13 @@ const initialValues: ContextInterface = {
     isFetching: false,
     message: null,
     isLoggedin: false,
-    user: null,
+    userData: null,
     changeLang: lang => {},
     setMessage: message => {},
     setIsFetching: isFetching => {},
     login: () => {},
     logout: () => {},
-    userDataReducer: () => {},
+    setUserData: () => {},
 };
 
 export const AppContext = createContext({...initialValues});

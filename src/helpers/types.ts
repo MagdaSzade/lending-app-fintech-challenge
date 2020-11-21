@@ -13,6 +13,11 @@ export interface LangInterface {
     en: string;
 }
 
+export interface UserActionInterface {
+    type: 'newUser' | 'removeUser';
+    payload?: any;
+}
+
 export interface Message {
     type: 'error' | 'info';
     title: LangInterface;

@@ -19,7 +19,7 @@ export const useLoginNewUser = () => {
             window.sessionStorage.setItem('auth', response.headers.authorization);
             setMessage(loginSuccesText);
             login();
-            pushToHistory(ROUTES.USER_HOME);
+            pushToHistory(ROUTES.USER_MESSAGES);
         } catch (err) {
             setMessage(fetchAPIError);
         } finally {

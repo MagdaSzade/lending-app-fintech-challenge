@@ -10,7 +10,7 @@ import {DisplayMessage} from '../DisplayMessage/DisplayMessage';
 import {ROUTES} from '../../helpers/ROUTES';
 import {test} from './App.styles';
 import '../../helpers/globalCss';
-import {UserHomePage} from '../UserHomePage/UserHomePage';
+import {UserPageContainer} from '../UserPageContainer/UserPageContainer';
 
 export const App = () => {
     return (
@@ -26,7 +26,7 @@ export const App = () => {
                             <FolderContainer />
                         </NoAuthRoute>
                         <AuthRoute path={ROUTES.USER_HOME}>
-                            <UserHomePage />
+                            <UserPageContainer />
                         </AuthRoute>
                     </Switch>
                     <DisplayMessage />
