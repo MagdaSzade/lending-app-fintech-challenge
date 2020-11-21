@@ -19,64 +19,47 @@ export const NavBar: React.FC = () => {
     };
 
     useEffect(() => {
+        const linkStyleDisplay = () => {
+            return isNavBar ? displayBlockStyle : displayNoneStyle;
+        };
         setLinkStyle(linkStyleDisplay());
     }, [isNavBar]);
 
-    const linkStyleDisplay = () => {
-        return isNavBar ? displayBlockStyle : displayNoneStyle;
-    };
-
-    if (userData?.role === ROLE.BORROWER) {
-        return (
-            <nav className={navbarConteinerStyle}>
-                <div onClick={toggle} className={iconNavStyle}>
-                    <BiMenu size="1.5rem" className={centerIconStyle} />
-                </div>
+    return (
+        <nav className={navbarConteinerStyle}>
+            <div onClick={toggle} className={iconNavStyle}>
+                <BiMenu size="1.5rem" className={centerIconStyle} />
+            </div>
+            {userData?.role === ROLE.BORROWER ? (
                 <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_MAKE_INQUIRIES}>
                     <Button>Nowe zpytanie</Button>
                 </NavLink>
+            ) : (
+                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_FIND_INQUIRIES}>
+                    <Button>Sprawdź zapytania</Button>
+                </NavLink>
+            )}
+            {userData?.role === ROLE.BORROWER ? (
                 <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_INQUIRIES}>
                     <Button>Zapytania ofertowe</Button>
                 </NavLink>
-                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_LOANS}>
-                    <Button>Pożyczki</Button>
+            ) : (
+                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_OFFERS}>
+                    <Button>Złożone oferty</Button>
                 </NavLink>
-                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_MESSAGES}>
-                    <Button>Widomości</Button>
-                </NavLink>
-                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_ACCOUNT}>
-                    <Button>Konto</Button>
-                </NavLink>
-                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_PROFILE}>
-                    <Button>Profil</Button>
-                </NavLink>
-            </nav>
-        );
-    } else {
-        return (
-            <nav className={navbarConteinerStyle}>
-                <Button onClick={toggle} className={iconNavStyle}>
-                    <BiMenu />
-                </Button>
-                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_MAKE_INQUIRIES}>
-                    <Button>Nowe zpytanie</Button>
-                </NavLink>
-                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_INQUIRIES}>
-                    <Button>Zapytania ofertowe</Button>
-                </NavLink>
-                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_LOANS}>
-                    <Button>Pożyczki</Button>
-                </NavLink>
-                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_MESSAGES}>
-                    <Button>Widomości</Button>
-                </NavLink>
-                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_ACCOUNT}>
-                    <Button>Konto</Button>
-                </NavLink>
-                <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_PROFILE}>
-                    <Button>Profil</Button>
-                </NavLink>
-            </nav>
-        );
-    }
+            )}
+            <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_LOANS}>
+                <Button>Pożyczki</Button>
+            </NavLink>
+            <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_MESSAGES}>
+                <Button>Widomości</Button>
+            </NavLink>
+            <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_ACCOUNT}>
+                <Button>Konto</Button>
+            </NavLink>
+            <NavLink onClick={toggle} className={linkStyle} to={ROUTES.USER_PROFILE}>
+                <Button>Profil</Button>
+            </NavLink>
+        </nav>
+    );
 };

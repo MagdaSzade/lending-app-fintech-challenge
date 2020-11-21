@@ -6,7 +6,7 @@ export const testUser: UserBorrowerInterface = {
     surname: 'testSurname',
     phone: '111111111',
     email: 'test@test.pl',
-    role: ROLE.BORROWER,
+    role: ROLE.LENDER,
     ListOfMessages: [],
     ListOfInqueries: [],
 };
