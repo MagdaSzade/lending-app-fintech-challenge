@@ -25,8 +25,11 @@ export interface Message {
 }
 
 export interface UserMessageInterface {
+    date: string;
     title: string;
     message: string;
+    hasBeenRead: boolean;
+    ID: string;
 }
 
 export interface InquieryInterface {

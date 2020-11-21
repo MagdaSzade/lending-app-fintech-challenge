@@ -1,7 +1,9 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {ROUTES} from '../../../helpers/ROUTES';
+import {MessagesList} from '../../Messages/MessagesList';
 import {NavBar} from '../../NavBar/NavBar';
+import {DetailsConteiner} from '../DetailContainer/DetailsConteiner';
 import {userContainerStyle} from './UserPageContainer.styles';
 
 export const UserPageContainer: React.FC = () => {
@@ -9,7 +11,11 @@ export const UserPageContainer: React.FC = () => {
         <div className={userContainerStyle}>
             <NavBar />
             <Switch>
-                <Route path={ROUTES.USER_MESSAGES}>wiadomości</Route>
+                <Route path={ROUTES.USER_MESSAGES}>
+                    <DetailsConteiner title="Wiadomości">
+                        <MessagesList />
+                    </DetailsConteiner>
+                </Route>
                 <Route path={ROUTES.USER_PROFILE}>Profil Użytkownika</Route>
                 <Route path={ROUTES.USER_ACCOUNT}>Konto bankowe użytkownika</Route>
                 <Route path={ROUTES.USER_LOANS}>Pożyczki wzięte</Route>
