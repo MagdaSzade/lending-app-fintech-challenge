@@ -1,6 +1,6 @@
 import {LoginUserInterface} from './LoginForm.interface';
 import {FormikErrors} from 'formik';
-import {LANGS} from '../../helpers/types';
+import {LANGS} from '../../../helpers/types';
 
 export const initialValues: LoginUserInterface = {
     email: '',

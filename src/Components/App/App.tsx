@@ -3,14 +3,14 @@ import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom
 import {AppContextProvider} from '../Context/Context';
 import {AuthRoute} from '../Routes/AuthRoute';
 import {NoAuthRoute} from '../Routes/NoAuthRoute';
-import {FolderContainer} from '../FolderContainer/FolderContainer';
+import {FolderContainer} from '../Conteiners/FolderContainer/FolderContainer';
 import {Header} from '../Header/Header';
 import {Spinner} from '../Spinner/Spinner';
 import {DisplayMessage} from '../DisplayMessage/DisplayMessage';
 import {ROUTES} from '../../helpers/ROUTES';
 import {test} from './App.styles';
 import '../../helpers/globalCss';
-import {UserPageContainer} from '../UserPageContainer/UserPageContainer';
+import {UserPageContainer} from '../Conteiners/UserPageContainer/UserPageContainer';
 
 export const App = () => {
     return (

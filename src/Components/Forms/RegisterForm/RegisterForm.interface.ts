@@ -1,4 +1,4 @@
-import {ROLE} from '../../helpers/types';
+import {ROLE} from '../../../helpers/types';
 
 export interface NewUserInterface {
     name: string;
