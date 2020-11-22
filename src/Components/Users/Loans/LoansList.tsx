@@ -1,16 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {ROUTES} from '../../../helpers/ROUTES';
 import {LOAN_STATUS} from '../../../helpers/types';
 import {useAppContext} from '../../../hooks/useAppContext';
 import {usePushToHistory} from '../../../hooks/usePushToHistory';
+import {startingFilters} from './LoansList.helpers';
 import {Record} from './LoansListRecord';
 
 export const LoansList: React.FC = () => {
     const {userData} = useAppContext();
     const pushToHistry = usePushToHistory();
     const {location} = useHistory();
-    const [filter, setfilter] = useState(LOAN_STATUS.ALL);
+    const [filter, setfilter] = useState(startingFilters(location.pathname));
 
     const onSelectChange = (e: any) => {
         setfilter(e.target.value);
@@ -26,20 +27,6 @@ export const LoansList: React.FC = () => {
                 break;
         }
     };
-
-    useEffect(() => {
-        switch (location.pathname) {
-            case ROUTES.USER_LOANS:
-                setfilter(LOAN_STATUS.ALL);
-                break;
-            case ROUTES.USER_LOANS_PAID_OFF:
-                setfilter(LOAN_STATUS.PAID_OFF);
-                break;
-            case ROUTES.USER_LOANS_PENDING:
-                setfilter(LOAN_STATUS.PENDING);
-                break;
-        }
-    }, []);
 
     if (userData && userData.ListOfLoans.length > 0) {
         return (
