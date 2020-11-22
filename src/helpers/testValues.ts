@@ -1,4 +1,4 @@
-import {ROLE, UserBorrowerInterface, UserMessageInterface} from './types';
+import {LoanInterface, LOAN_STATUS, ROLE, UserBorrowerInterface, UserMessageInterface} from './types';
 
 const testMessages1: UserMessageInterface = {
     title: 'TO JEST TESTOWA MESSAGE',
@@ -24,6 +24,30 @@ const testMessages3: UserMessageInterface = {
     ID: 'string3',
 };
 
+const testLoan1: LoanInterface = {
+    ID: 'loan1',
+    borrowerName: 'test borrower',
+    lenderName: 'test lender',
+    loanWasTaken: '20.11.2020',
+    willBePaidOff: '20.11.2021',
+    amount: 10000,
+    paidOff: 200,
+    totalLeft: 875,
+    status: LOAN_STATUS.PENDING,
+};
+
+const testLoan2: LoanInterface = {
+    ID: 'loan2',
+    borrowerName: 'test borrower',
+    lenderName: 'test lender',
+    loanWasTaken: '20.11.2019',
+    willBePaidOff: '20.11.2020',
+    amount: 10000,
+    paidOff: 10700,
+    totalLeft: 0,
+    status: LOAN_STATUS.PAID_OFF,
+};
+
 export const testUser: UserBorrowerInterface = {
     userID: 'testID',
     name: 'testName',
@@ -33,4 +57,5 @@ export const testUser: UserBorrowerInterface = {
     role: ROLE.LENDER,
     ListOfMessages: [testMessages1, testMessages2, testMessages3],
     ListOfInqueries: [],
+    ListOfLoans: [testLoan1, testLoan2],
 };

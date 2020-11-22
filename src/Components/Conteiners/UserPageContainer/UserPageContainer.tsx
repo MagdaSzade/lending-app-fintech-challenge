@@ -2,10 +2,11 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {ROUTES} from '../../../helpers/ROUTES';
 import {MessagesList} from '../../Users/Messages/MessagesList';
+import {Profile} from '../../Users/Profile/Profile';
+import {LoansList} from '../../Users/Loans/LoansList';
 import {NavBar} from '../../NavBar/NavBar';
 import {DetailsConteiner} from '../DetailContainer/DetailsConteiner';
 import {userContainerStyle} from './UserPageContainer.styles';
-import {Profile} from '../../Users/Profile/Profile';
 
 export const UserPageContainer: React.FC = () => {
     return (
@@ -23,7 +24,11 @@ export const UserPageContainer: React.FC = () => {
                     </DetailsConteiner>
                 </Route>
                 <Route path={ROUTES.USER_ACCOUNT}>Konto bankowe użytkownika</Route>
-                <Route path={ROUTES.USER_LOANS}>Pożyczki wzięte</Route>
+                <Route path={ROUTES.USER_LOANS}>
+                    <DetailsConteiner title="pożyczki">
+                        <LoansList />
+                    </DetailsConteiner>
+                </Route>
                 <Route path={ROUTES.USER_OFFERS}>Oferty</Route>
                 <Route path={ROUTES.USER_INQUIRIES}>Zapytania ofertowe</Route>
                 <Route path={ROUTES.USER_MAKE_INQUIRIES}>Stwórz nowe zapytanie ofertowe</Route>
