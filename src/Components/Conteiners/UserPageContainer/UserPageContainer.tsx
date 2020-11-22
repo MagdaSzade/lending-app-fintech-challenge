@@ -1,10 +1,11 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {ROUTES} from '../../../helpers/ROUTES';
-import {MessagesList} from '../../Messages/MessagesList';
+import {MessagesList} from '../../Users/Messages/MessagesList';
 import {NavBar} from '../../NavBar/NavBar';
 import {DetailsConteiner} from '../DetailContainer/DetailsConteiner';
 import {userContainerStyle} from './UserPageContainer.styles';
+import {Profile} from '../../Users/Profile/Profile';
 
 export const UserPageContainer: React.FC = () => {
     return (
@@ -16,7 +17,11 @@ export const UserPageContainer: React.FC = () => {
                         <MessagesList />
                     </DetailsConteiner>
                 </Route>
-                <Route path={ROUTES.USER_PROFILE}>Profil Użytkownika</Route>
+                <Route path={ROUTES.USER_PROFILE}>
+                    <DetailsConteiner title="Twoje konto">
+                        <Profile />
+                    </DetailsConteiner>
+                </Route>
                 <Route path={ROUTES.USER_ACCOUNT}>Konto bankowe użytkownika</Route>
                 <Route path={ROUTES.USER_LOANS}>Pożyczki wzięte</Route>
                 <Route path={ROUTES.USER_OFFERS}>Oferty</Route>
