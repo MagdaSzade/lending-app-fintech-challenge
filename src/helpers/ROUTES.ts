@@ -12,6 +12,8 @@ export enum ROUTES {
     USER_OFFERS = '/user/my-offers',
     USER_INQUIRIES = '/user/inquiries',
     USER_LOANS = '/user/loans',
+    USER_LOANS_PAID_OFF = '/user/loans/paid-off',
+    USER_LOANS_PENDING = '/user/loans/pending',
     USER_MAKE_INQUIRIES = '/user/inquiry-form',
     USER_MAKE_OFFER = '/user/offer-form',
     USER_FIND_INQUIRIES = '/user/find-inqueries',

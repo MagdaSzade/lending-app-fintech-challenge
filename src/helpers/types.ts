@@ -8,6 +8,12 @@ export enum LANGS {
     EN = 'en',
 }
 
+export enum LOAN_STATUS {
+    PENDING = 'PENDING',
+    PAID_OFF = 'PAID_OFF',
+    ALL = 'ALL',
+}
+
 export interface LangInterface {
     pl: string;
     en: string;
@@ -49,6 +55,18 @@ export interface OfferInterface {
     paymentFrequency: string;
 }
 
+export interface LoanInterface {
+    ID: string;
+    lenderName: string;
+    borrowerName: string;
+    loanWasTaken: string;
+    willBePaidOff: string;
+    amount: number;
+    paidOff: number;
+    totalLeft: number;
+    status: LOAN_STATUS;
+}
+
 interface UserInterface {
     userID: string;
     name: string;
@@ -57,6 +75,7 @@ interface UserInterface {
     email: string;
     role: 'BORROWER' | 'LENDER';
     ListOfMessages: Array<UserMessageInterface>;
+    ListOfLoans: Array<LoanInterface>;
 }
 
 export interface UserBorrowerInterface extends UserInterface {
