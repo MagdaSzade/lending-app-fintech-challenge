@@ -1,11 +1,11 @@
 import React, {useEffect, useState, memo} from 'react';
-import {UserMessageInterface} from '../../helpers/types';
+import {UserMessageInterface} from '../../../helpers/types';
 import {BiEnvelope, BiEnvelopeOpen} from 'react-icons/bi';
 import {recordStyle, dateStyle, displayNoneStyle, displayBlockStyle, toUpperCaseStyle, shrinkStyle} from './MessageList.styles';
 import {dateDisplay} from './MessageList.helpers';
-import {useMessageActions} from '../../hooks/useMessageActions';
-import {usePushToHistory} from '../../hooks/usePushToHistory';
-import {ROUTES} from '../../helpers/ROUTES';
+import {useMessageActions} from '../../../hooks/useMessageActions';
+import {usePushToHistory} from '../../../hooks/usePushToHistory';
+import {ROUTES} from '../../../helpers/ROUTES';
 import {cx} from 'emotion';
 
 export const Record: React.FC<UserMessageInterface> = memo(({hasBeenRead, title, message, date, ID}) => {
