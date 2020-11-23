@@ -1,15 +1,19 @@
 import {Button} from '@material-ui/core';
 import React from 'react';
-import {backStyle, buttonStyle} from './Profile.styles';
+import {backStyle, buttonStyle} from '../Profile/Profile.styles';
 import {GoArrowLeft} from 'react-icons/go';
 import {usePushToHistory} from '../../../hooks/usePushToHistory';
 import {ROUTES} from '../../../helpers/ROUTES';
 
-export const BackButton: React.FC = () => {
+interface BackButtonInterface {
+    path: ROUTES;
+}
+
+export const BackButton: React.FC<BackButtonInterface> = ({path}) => {
     const pushToHistory = usePushToHistory();
 
     return (
-        <Button onClick={() => pushToHistory(ROUTES.USER_PROFILE)} variant="outlined" className={buttonStyle}>
+        <Button onClick={() => pushToHistory(path)} variant="outlined" className={buttonStyle}>
             <div className={backStyle}>
                 <GoArrowLeft size="1rem" />
                 wróć

@@ -1,4 +1,4 @@
-import {LoanInterface, LOAN_STATUS, ROLE, UserBorrowerInterface, UserMessageInterface} from './types';
+import {AccountInterface, LoanInterface, LOAN_STATUS, ROLE, UserBorrowerInterface, UserMessageInterface} from './types';
 
 const testMessages1: UserMessageInterface = {
     title: 'TO JEST TESTOWA MESSAGE',
@@ -48,6 +48,12 @@ const testLoan2: LoanInterface = {
     status: LOAN_STATUS.PAID_OFF,
 };
 
+const testAccount: AccountInterface = {
+    ID: 'string',
+    accountNumber: '0000 0000 0000 0000',
+    accountState: -1200,
+};
+
 export const testUser: UserBorrowerInterface = {
     userID: 'testID',
     name: 'testName',
@@ -55,6 +61,7 @@ export const testUser: UserBorrowerInterface = {
     phone: '111111111',
     email: 'test@test.pl',
     role: ROLE.LENDER,
+    account: testAccount,
     ListOfMessages: [testMessages1, testMessages2, testMessages3],
     ListOfInqueries: [],
     ListOfLoans: [testLoan1, testLoan2],

@@ -67,6 +67,12 @@ export interface LoanInterface {
     status: LOAN_STATUS;
 }
 
+export interface AccountInterface {
+    ID: string;
+    accountNumber: string;
+    accountState: number;
+}
+
 interface UserInterface {
     userID: string;
     name: string;
@@ -74,6 +80,7 @@ interface UserInterface {
     phone: string;
     email: string;
     role: 'BORROWER' | 'LENDER';
+    account: AccountInterface;
     ListOfMessages: Array<UserMessageInterface>;
     ListOfLoans: Array<LoanInterface>;
 }

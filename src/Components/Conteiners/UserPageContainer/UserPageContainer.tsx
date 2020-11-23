@@ -7,6 +7,7 @@ import {LoansList} from '../../Users/Loans/LoansList';
 import {NavBar} from '../../NavBar/NavBar';
 import {DetailsConteiner} from '../DetailContainer/DetailsConteiner';
 import {userContainerStyle} from './UserPageContainer.styles';
+import {Account} from '../../Users/Account/Account';
 
 export const UserPageContainer: React.FC = () => {
     return (
@@ -23,7 +24,11 @@ export const UserPageContainer: React.FC = () => {
                         <Profile />
                     </DetailsConteiner>
                 </Route>
-                <Route path={ROUTES.USER_ACCOUNT}>Konto bankowe użytkownika</Route>
+                <Route path={ROUTES.USER_ACCOUNT}>
+                    <DetailsConteiner title="Twoje konto bankowe">
+                        <Account />
+                    </DetailsConteiner>
+                </Route>
                 <Route path={ROUTES.USER_LOANS}>
                     <DetailsConteiner title="pożyczki">
                         <LoansList />
