@@ -5,9 +5,9 @@ import {useAppContext} from '../../../hooks/useAppContext';
 import {EmailChangeForm} from '../../Forms/EmailChangeForm/EmailChangeForm';
 import {PasswordChangeForm} from '../../Forms/PasswordChangeForm/PasswordChangeForm';
 import {profileStyle, parStyle, dangerStyle} from './Profile.styles';
-import {BackButton} from './ProfileBackButton';
+import {BackButton} from '../Common/BackButton';
 import {DeleteAccount} from './ProfileDeleteAccount';
-import {RedirectButton} from './ProfileRedirectButton';
+import {RedirectButton} from '../Common/RedirectButton';
 
 export const Profile: React.FC = () => {
     const {userData} = useAppContext();
@@ -16,15 +16,15 @@ export const Profile: React.FC = () => {
         <div className={profileStyle}>
             <Switch>
                 <Route path={ROUTES.USER_PROFILE_CHANGE_EMAIL}>
-                    <BackButton />
+                    <BackButton path={ROUTES.USER_PROFILE} />
                     <EmailChangeForm />
                 </Route>
                 <Route path={ROUTES.USER_PROFILE_CHANGE_PASSWORD}>
-                    <BackButton />
+                    <BackButton path={ROUTES.USER_PROFILE} />
                     <PasswordChangeForm />
                 </Route>
                 <Route path={ROUTES.USER_PROFILE_DELETE_ACCOUNT}>
-                    <BackButton />
+                    <BackButton path={ROUTES.USER_PROFILE} />
                     <DeleteAccount />
                 </Route>
                 <Route path={ROUTES.USER_PROFILE} exact>

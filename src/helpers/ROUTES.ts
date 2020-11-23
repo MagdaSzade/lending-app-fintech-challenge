@@ -9,6 +9,8 @@ export enum ROUTES {
     USER_PROFILE_DELETE_ACCOUNT = '/user/profile/delete-account',
     USER_MESSAGES = '/user/messages',
     USER_ACCOUNT = '/user/account',
+    USER_ACCOUNT_PAY_OUT = '/user/account/pay-out',
+    USER_ACCOUNT_DEPOSIT = '/user/account/deposit',
     USER_OFFERS = '/user/my-offers',
     USER_INQUIRIES = '/user/inquiries',
     USER_LOANS = '/user/loans',
