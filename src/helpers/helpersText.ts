@@ -23,3 +23,15 @@ export const loginSuccesText: Message = {
         en: 'You will be redirected to your account',
     },
 };
+
+export const newInquirySuccesText: Message = {
+    type: 'info',
+    title: {
+        pl: 'Wysłano zapytanie',
+        en: 'Inquiry was send',
+    },
+    message: {
+        pl: 'Nastąpi przekierowanie do wiadomości',
+        en: 'You will be redirected to your messages',
+    },
+};

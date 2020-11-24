@@ -10,16 +10,17 @@ import {userContainerStyle} from './UserPageContainer.styles';
 import {Account} from '../../Users/Account/Account';
 import {useAsyncUserData} from '../../../hooks/usersActions/useAsyncUserData';
 import {useAppContext} from '../../../hooks/useAppContext';
+import {InquiryForm} from '../../Forms/InquiryForm/InquiryForm';
 
 export const UserPageContainer: React.FC = () => {
     const getUser = useAsyncUserData();
-    const {isLoggedin} = useAppContext();
+    const {isLoggedin, userData} = useAppContext();
 
     useEffect(() => {
-        if (isLoggedin) {
+        if (isLoggedin && userData === null) {
             getUser();
         }
-    }, [isLoggedin, getUser]);
+    }, [isLoggedin, getUser, userData]);
 
     return (
         <div className={userContainerStyle}>
@@ -47,7 +48,11 @@ export const UserPageContainer: React.FC = () => {
                 </Route>
                 <Route path={ROUTES.USER_OFFERS}>Oferty</Route>
                 <Route path={ROUTES.USER_INQUIRIES}>Zapytania ofertowe</Route>
-                <Route path={ROUTES.USER_MAKE_INQUIRIES}>Stwórz nowe zapytanie ofertowe</Route>
+                <Route path={ROUTES.USER_MAKE_INQUIRIES}>
+                    <DetailsConteiner title="Zapytaj o pożyczkę">
+                        <InquiryForm />
+                    </DetailsConteiner>
+                </Route>
                 <Route path={ROUTES.USER_MAKE_OFFER}>Stwórz nową ofertę</Route>
                 <Route path={ROUTES.USER_FIND_INQUIRIES}>ZNAJDŹ zapytania ofertowe</Route>
             </Switch>
