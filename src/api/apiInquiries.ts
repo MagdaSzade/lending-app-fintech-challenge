@@ -1,6 +1,6 @@
-import {InquieryInterface} from '../helpers/types';
+import {InquiryFormInterface} from '../Components/Forms/InquiryForm/InquiryForm.interface';
 import {backend} from './backend';
 
-export const newInquiriesApi = (data: InquieryInterface) => {
-    return backend.post('/inqueries', data);
+export const newInquiryApi = (body: InquiryFormInterface) => {
+    return backend.post('/inquiries', body);
 };
