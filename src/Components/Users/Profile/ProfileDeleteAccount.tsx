@@ -1,7 +1,7 @@
 import {Button} from '@material-ui/core';
 import React from 'react';
 import {useAppContext} from '../../../hooks/useAppContext';
-import {useUsersActions} from '../../../hooks/useUserActions';
+import {useUsersActions} from '../../../hooks/usersActions/useUserActions';
 import {buttonStyle, dangerStyle} from './Profile.styles';
 
 export const DeleteAccount: React.FC = () => {

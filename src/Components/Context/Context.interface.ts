@@ -1,3 +1,4 @@
+import {UserActionInterface} from '../../helpers/reducers';
 import {LANGS, Message, UserBorrowerInterface, UserLenderInterface} from '../../helpers/types';
 
 export interface ContextInterface {
@@ -11,5 +12,5 @@ export interface ContextInterface {
     login: () => void;
     logout: () => void;
     userData: UserBorrowerInterface | UserLenderInterface | null;
-    setUserData: () => void;
+    setUsersData: (action: UserActionInterface) => void;
 }

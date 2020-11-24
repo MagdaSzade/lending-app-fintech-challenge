@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {ROUTES} from '../../../helpers/ROUTES';
 import {MessagesList} from '../../Users/Messages/MessagesList';
@@ -8,8 +8,19 @@ import {NavBar} from '../../NavBar/NavBar';
 import {DetailsConteiner} from '../DetailContainer/DetailsConteiner';
 import {userContainerStyle} from './UserPageContainer.styles';
 import {Account} from '../../Users/Account/Account';
+import {useAsyncUserData} from '../../../hooks/usersActions/useAsyncUserData';
+import {useAppContext} from '../../../hooks/useAppContext';
 
 export const UserPageContainer: React.FC = () => {
+    const getUser = useAsyncUserData();
+    const {isLoggedin} = useAppContext();
+
+    useEffect(() => {
+        if (isLoggedin) {
+            getUser();
+        }
+    }, [isLoggedin, getUser]);
+
     return (
         <div className={userContainerStyle}>
             <NavBar />
