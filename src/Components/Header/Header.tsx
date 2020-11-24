@@ -16,6 +16,7 @@ export const Header: React.FC = () => {
                     className={buttonStyle}
                     onClick={() => {
                         changeLang(LANGS.PL);
+                        console.log(window.sessionStorage.getItem('userData'));
                     }}
                 >
                     PL

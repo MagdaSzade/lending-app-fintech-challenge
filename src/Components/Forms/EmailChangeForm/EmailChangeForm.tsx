@@ -2,7 +2,7 @@ import React from 'react';
 import {Formik, Form} from 'formik';
 import {ConfirmButton} from '../Common/ConfirmButton';
 import {TextInput} from '../Common/TextInput';
-import {useUsersActions} from '../../../hooks/useUserActions';
+import {useUsersActions} from '../../../hooks/usersActions/useUserActions';
 import {initialValues, emailChangeFormValidation} from './EmailChangeForm.helpers';
 import {formContainerStyle} from './EmailChangeForm.styles';
 

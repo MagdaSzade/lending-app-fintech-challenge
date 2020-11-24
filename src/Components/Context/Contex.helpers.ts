@@ -13,7 +13,7 @@ const initialValues: ContextInterface = {
     setIsFetching: isFetching => {},
     login: () => {},
     logout: () => {},
-    setUserData: () => {},
+    setUsersData: () => {},
 };
 
 export const AppContext = createContext({...initialValues});

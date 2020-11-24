@@ -1,12 +1,12 @@
-import {EmailChangeInterface} from '../Components/Forms/EmailChangeForm/EmailChangeInterface';
-import {PasswordChangeInterface} from '../Components/Forms/PasswordChangeForm/PasswordChangeForm.interface';
+import {EmailChangeInterface} from '../../Components/Forms/EmailChangeForm/EmailChangeInterface';
+import {PasswordChangeInterface} from '../../Components/Forms/PasswordChangeForm/PasswordChangeForm.interface';
 
 export const useUsersActions = () => {
     const changePassword = (data: PasswordChangeInterface) => {
         console.log('zmieniam hasło');
     };
     const changeEmail = (data: EmailChangeInterface) => {
-        console.log('zmieniam hasło');
+        console.log('zmieniam email');
     };
     const deleteAccount = (userID: string) => {
         console.log('usuwam konto');

@@ -19,11 +19,6 @@ export interface LangInterface {
     en: string;
 }
 
-export interface UserActionInterface {
-    type: 'newUser' | 'removeUser';
-    payload?: any;
-}
-
 export interface Message {
     type: 'error' | 'info';
     title: LangInterface;
@@ -39,7 +34,7 @@ export interface UserMessageInterface {
 }
 
 export interface InquieryInterface {
-    inquieryID: string;
+    inquieryID?: string;
     loanAmount: number;
     loanDuration: number;
     submissionDeadline: Date;
@@ -77,7 +72,7 @@ interface UserInterface {
     userID: string;
     name: string;
     surname: string;
-    phone: string;
+    phone?: string;
     email: string;
     role: 'BORROWER' | 'LENDER';
     account: AccountInterface;
