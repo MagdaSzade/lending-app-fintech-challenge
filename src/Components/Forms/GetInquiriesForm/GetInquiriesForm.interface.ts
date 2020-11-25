@@ -1,4 +1,4 @@
-export interface InquiryFormInterface {
+export interface GetInquiryFormInterface {
     maxAmount: number;
     maxLoanDuration: number;
     minAmount: number;
