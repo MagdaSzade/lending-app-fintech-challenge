@@ -11,9 +11,10 @@ import {Account} from '../../Users/Account/Account';
 import {useAsyncUserData} from '../../../hooks/usersActions/useAsyncUserData';
 import {useAppContext} from '../../../hooks/useAppContext';
 import {InquiryForm} from '../../Forms/InquiryForm/InquiryForm';
-import {GetInquiries} from '../../GetInquieries/GetInqueries';
+import {GetInquiries} from '../../Users/GetInquieries/GetInqueries';
 import {DisplayInquiries} from '../../Users/DisplayInquiries/DisplayInquiries';
 import {DisplayOffers} from '../../Users/DisplayOffers/DisplayOffers';
+import {OfferForm} from '../../Forms/OfferForm/OfferForm';
 
 export const UserPageContainer: React.FC = () => {
     const getUser = useAsyncUserData();
@@ -64,10 +65,14 @@ export const UserPageContainer: React.FC = () => {
                         <InquiryForm />
                     </DetailsConteiner>
                 </Route>
-                <Route path={ROUTES.USER_MAKE_OFFER}>Stwórz nową ofertę</Route>
                 <Route path={ROUTES.USER_FIND_INQUIRIES}>
                     <DetailsConteiner title="Znajdź zapytania">
                         <GetInquiries />
+                    </DetailsConteiner>
+                </Route>
+                <Route path={ROUTES.USER_MAKE_OFFER}>
+                    <DetailsConteiner title="Złóż ofertę">
+                        <OfferForm />
                     </DetailsConteiner>
                 </Route>
             </Switch>
