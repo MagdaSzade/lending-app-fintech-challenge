@@ -1,7 +1,6 @@
-import {Button} from '@material-ui/core';
 import React from 'react';
-import {InquieryInterface} from '../../helpers/types';
-import {recordContainerStyle} from '../Users/Loans/LoansList.styles';
+import {InquieryInterface} from '../../../helpers/types';
+import {recordContainerStyle} from '../Loans/LoansList.styles';
 
 interface RecordInterface {
     inquiry: InquieryInterface;
@@ -22,7 +21,10 @@ export const Record: React.FC<RecordInterface> = ({inquiry}) => {
                 <p>Czas pożyczki</p>
                 <p>{inquiry.loanDuration}</p>
             </div>
-            <Button> Aplikuj! </Button>
+            <div>
+                <p>Status</p>
+                <p>{inquiry.status} </p>
+            </div>
         </div>
     );
 };

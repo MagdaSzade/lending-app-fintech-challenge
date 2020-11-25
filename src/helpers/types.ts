@@ -14,6 +14,11 @@ export enum LOAN_STATUS {
     ALL = 'ALL',
 }
 
+export enum INQIRY_STATUS {
+    PENDING = 'pending',
+    RESOLVED = 'resolved',
+}
+
 export interface LangInterface {
     pl: string;
     en: string;
@@ -39,6 +44,7 @@ export interface InquieryInterface {
     loanDuration: number;
     submissionDeadline: string;
     createdAt: string;
+    status: INQIRY_STATUS;
 }
 
 export interface OfferInterface {
@@ -78,15 +84,13 @@ interface UserInterface {
     account: AccountInterface;
     ListOfMessages: Array<UserMessageInterface>;
     ListOfLoans: Array<LoanInterface>;
-}
-
-export interface UserBorrowerInterface extends UserInterface {
+    ListOfOffers: Array<OfferInterface>;
     ListOfInqueries: Array<InquieryInterface>;
 }
 
-export interface UserLenderInterface extends UserInterface {
-    ListOfOffers: Array<OfferInterface>;
-}
+export interface UserBorrowerInterface extends UserInterface {}
+
+export interface UserLenderInterface extends UserInterface {}
 
 export interface ReagisterNewUserForm {
     name: string;

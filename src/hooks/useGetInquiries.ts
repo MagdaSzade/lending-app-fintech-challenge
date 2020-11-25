@@ -21,6 +21,7 @@ export const useGetInquiries = () => {
                     loanAmount: inquiry.loanAmount,
                     loanDuration: inquiry.loanDuration,
                     submissionDeadline: inquiry.submissionDeadline,
+                    status: inquiry.status,
                 };
                 newInquiries.push(newInquiry);
             });
