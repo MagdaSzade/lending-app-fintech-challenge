@@ -9,7 +9,13 @@ export const GetInquiries: React.FC = () => {
     return (
         <div>
             <GetInquiriesForm onSubmit={getInquieries} />
-            <div>{listOfInquieries ? listOfInquieries.map(inq => <Record inquiry={inq} />) : null}</div>
+            <div>
+                {listOfInquieries && listOfInquieries.length > 0 ? (
+                    listOfInquieries.map(inq => <Record inquiry={inq} />)
+                ) : (
+                    <div>Zmień parametry wyszukania</div>
+                )}
+            </div>
         </div>
     );
 };

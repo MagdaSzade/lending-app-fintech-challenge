@@ -13,6 +13,7 @@ import {useAppContext} from '../../../hooks/useAppContext';
 import {InquiryForm} from '../../Forms/InquiryForm/InquiryForm';
 import {GetInquiries} from '../../GetInquieries/GetInqueries';
 import {DisplayInquiries} from '../../Users/DisplayInquiries/DisplayInquiries';
+import {DisplayOffers} from '../../Users/DisplayOffers/DisplayOffers';
 
 export const UserPageContainer: React.FC = () => {
     const getUser = useAsyncUserData();
@@ -48,7 +49,11 @@ export const UserPageContainer: React.FC = () => {
                         <LoansList />
                     </DetailsConteiner>
                 </Route>
-                <Route path={ROUTES.USER_OFFERS}>Oferty</Route>
+                <Route path={ROUTES.USER_OFFERS}>
+                    <DetailsConteiner title="Złożone oferty">
+                        <DisplayOffers />
+                    </DetailsConteiner>
+                </Route>
                 <Route path={ROUTES.USER_INQUIRIES}>
                     <DetailsConteiner title="Złożone zapytania">
                         <DisplayInquiries />
