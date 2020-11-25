@@ -19,6 +19,12 @@ export enum INQIRY_STATUS {
     RESOLVED = 'resolved',
 }
 
+export enum OFFER_STATUS {
+    PENDING = 'pending',
+    RESOLVED = 'resolved',
+    REJECTED = 'rejected',
+}
+
 export interface LangInterface {
     pl: string;
     en: string;
@@ -48,10 +54,21 @@ export interface InquieryInterface {
 }
 
 export interface OfferInterface {
+    createdAt: string;
+    status: OFFER_STATUS;
+    loanAmountGiven: number;
+    annualIntrestRateGiven: number;
+    loanDurationGiven: number;
+    loanAmount: number;
+    loanDuration: number;
+    submitionDeadline: string;
+}
+
+export interface MakeOfferInterface {
     offertID: string;
     lenderID: string;
     inquieryID: string;
-    loadnAmount: number;
+    loanAmount: number;
     annualIntrestRate: number;
     paymentFrequency: string;
 }
