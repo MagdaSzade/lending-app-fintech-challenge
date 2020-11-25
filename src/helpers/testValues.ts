@@ -67,3 +67,17 @@ export const testUser: UserBorrowerInterface = {
     ListOfOffers: [],
     ListOfLoans: [testLoan1, testLoan2],
 };
+
+export const testBorrower: UserBorrowerInterface = {
+    userID: 'testID',
+    name: 'testName',
+    surname: 'testSurname',
+    phone: '111111111',
+    email: 'test@test.pl',
+    role: ROLE.BORROWER,
+    account: testAccount,
+    ListOfMessages: [testMessages1, testMessages2, testMessages3],
+    ListOfInqueries: [],
+    ListOfOffers: [],
+    ListOfLoans: [testLoan1, testLoan2],
+};
