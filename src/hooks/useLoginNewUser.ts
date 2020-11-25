@@ -10,7 +10,7 @@ export const useLoginNewUser = () => {
     const pushToHistory = usePushToHistory();
 
     const loginUser = async (userData: LoginUserInterface) => {
-        const bodyFormData = new window.FormData();
+        const bodyFormData = new FormData();
         bodyFormData.append('username', userData.email);
         bodyFormData.append('password', userData.password);
         setIsFetching(true);
