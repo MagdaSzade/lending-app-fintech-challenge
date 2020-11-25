@@ -8,6 +8,7 @@ export const getAlldata = async () => {
         const decoded: any = jwt_decode(token);
         const {data} = await getAllUserDataApi(decoded['user-id']);
         let user: UserBorrowerInterface | UserLenderInterface | null = null;
+        console.log(data);
         if (data.roles[0].name === ROLE.BORROWER) {
             user = {
                 email: data.email,
@@ -16,6 +17,7 @@ export const getAlldata = async () => {
                 ListOfInqueries: data.inquiries,
                 ListOfLoans: data.loans,
                 ListOfMessages: [],
+                ListOfOffers: [],
                 userID: data.id,
                 phone: data.phone,
                 role: ROLE.BORROWER,
@@ -32,6 +34,7 @@ export const getAlldata = async () => {
                 surname: data.surname,
                 ListOfOffers: data.offers,
                 ListOfLoans: data.loans,
+                ListOfInqueries: [],
                 ListOfMessages: [],
                 userID: data.id,
                 phone: data.phone,

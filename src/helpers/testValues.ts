@@ -64,5 +64,6 @@ export const testUser: UserBorrowerInterface = {
     account: testAccount,
     ListOfMessages: [testMessages1, testMessages2, testMessages3],
     ListOfInqueries: [],
+    ListOfOffers: [],
     ListOfLoans: [testLoan1, testLoan2],
 };
