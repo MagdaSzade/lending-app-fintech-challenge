@@ -34,11 +34,11 @@ export interface UserMessageInterface {
 }
 
 export interface InquieryInterface {
-    inquieryID?: string;
+    id: string;
     loanAmount: number;
     loanDuration: number;
-    submissionDeadline: Date;
-    createdAt: Date;
+    submissionDeadline: string;
+    createdAt: string;
 }
 
 export interface OfferInterface {

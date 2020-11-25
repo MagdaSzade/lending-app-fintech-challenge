@@ -4,11 +4,16 @@ import {CashInput} from '../Common/CashInput';
 import {ConfirmButton} from '../Common/ConfirmButton';
 import {NumberInput} from '../Common/NumberInput';
 import {formContainerStyle} from '../EmailChangeForm/EmailChangeForm.styles';
-import {initialValues} from './GetInquiryForm.helpers';
+import {initialValues} from './GetInquiriesForm.helpers';
+import {GetInquiryFormInterface} from './GetInquiriesForm.interface';
 
-export const InquiryForm: React.FC = () => {
+interface GetInquiriesFormPropsInterface {
+    onSubmit: (values: GetInquiryFormInterface) => void;
+}
+
+export const GetInquiriesForm: React.FC<GetInquiriesFormPropsInterface> = ({onSubmit}) => {
     return (
-        <Formik onSubmit={console.log} initialValues={initialValues}>
+        <Formik onSubmit={onSubmit} initialValues={initialValues}>
             {({values: {minAmount, maxAmount, minLoanDuration, maxLoanDuration}, handleBlur, setFieldValue, isValid}) => (
                 <Form className={formContainerStyle}>
                     <CashInput
