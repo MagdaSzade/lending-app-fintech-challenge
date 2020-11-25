@@ -1,6 +1,6 @@
 import React from 'react';
-import {useGetInquiries} from '../../hooks/useGetInquiries';
-import {GetInquiriesForm} from '../Forms/GetInquiriesForm/GetInquiriesForm';
+import {useGetInquiries} from '../../../hooks/useGetInquiries';
+import {GetInquiriesForm} from '../../Forms/GetInquiriesForm/GetInquiriesForm';
 import {Record} from './GetInquiriesRecord';
 
 export const GetInquiries: React.FC = () => {
