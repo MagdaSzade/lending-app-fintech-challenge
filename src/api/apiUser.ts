@@ -11,5 +11,5 @@ export const getAllUserDataApi = (ID: string) => {
 };
 
 export const loginUserApi = (data: FormData) => {
-    return Axios.post('/login', data);
+    return backend.post('/users/login', data);
 };
