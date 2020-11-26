@@ -1,5 +1,5 @@
 import {changeEmailApi, changePasswordApi, deleteUserApi} from '../../api/apiUser';
-import {EmailChangeInterface} from '../../Components/Forms/EmailChangeForm/EmailChangeInterface';
+import {EmailChangeInterface} from '../../Components/Forms/EmailChangeForm/EmailChange.interface';
 import {PasswordChangeInterface} from '../../Components/Forms/PasswordChangeForm/PasswordChangeForm.interface';
 import {
     changeEmailSuccesText,

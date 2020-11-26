@@ -1,5 +1,5 @@
 import {FormikErrors} from 'formik';
-import {EmailChangeInterface} from './EmailChangeInterface';
+import {EmailChangeInterface} from './EmailChange.interface';
 
 export const initialValues: EmailChangeInterface = {
     newEmail: '',

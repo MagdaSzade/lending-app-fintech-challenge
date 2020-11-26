@@ -22,7 +22,7 @@ export const EmailChangeForm: React.FC = () => {
                         onBlur={handleBlur}
                     />
                     <TextInput label="Hasło" name="password" value={password} type="password" onChange={handleChange} onBlur={handleBlur} />
-                    <ConfirmButton isValid={isValid} inValidText="nie można wysłać..." validText="wyślij" />
+                    <ConfirmButton isValid={isValid} />
                 </Form>
             )}
         </Formik>

@@ -1,6 +1,6 @@
 import {backend} from './backend';
 import {ChangePasswordForm, ReagisterNewUserForm} from '../helpers/types';
-import {EmailChangeInterface} from '../Components/Forms/EmailChangeForm/EmailChangeInterface';
+import {EmailChangeInterface} from '../Components/Forms/EmailChangeForm/EmailChange.interface';
 
 export const registerNewUser = (data: ReagisterNewUserForm) => {
     return backend.post('/users/register', data);

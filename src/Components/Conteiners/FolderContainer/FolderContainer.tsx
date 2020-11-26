@@ -39,10 +39,10 @@ export const FolderContainer: React.FC = () => {
             </section>
             <section className={containerStyle}>
                 <div className={markerContainerStyle}>
-                    <NavLink to={ROUTES.LOGIN} className={cx(markStyle, loginStyle)} activeClassName={activeLink}>
+                    <NavLink id="loginNav" to={ROUTES.LOGIN} className={cx(markStyle, loginStyle)} activeClassName={activeLink}>
                         <p className={markPStyle}>{descriptions[lang].login}</p>
                     </NavLink>
-                    <NavLink className={cx(markStyle, registerStyle)} to={ROUTES.REGISTER} activeClassName={activeLink}>
+                    <NavLink id="registerNav" className={cx(markStyle, registerStyle)} to={ROUTES.REGISTER} activeClassName={activeLink}>
                         <p className={markPStyle}>{descriptions[lang].register}</p>
                     </NavLink>
                 </div>

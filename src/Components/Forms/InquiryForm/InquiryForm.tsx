@@ -31,7 +31,7 @@ export const InquiryForm: React.FC = () => {
                         onChange={setFieldValue}
                         onBlur={handleBlur}
                     />
-                    <ConfirmButton isValid={isValid} inValidText="nie można wysłać..." validText="wyślij" />
+                    <ConfirmButton isValid={isValid} />
                 </Form>
             )}
         </Formik>

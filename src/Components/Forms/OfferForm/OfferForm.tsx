@@ -1,5 +1,8 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 
 export const OfferForm: React.FC = () => {
-    return <div>OFFERFORM inprogreesssss... ;-) </div>;
+    const {location} = useHistory();
+
+    return <div>{location.pathname} </div>;
 };

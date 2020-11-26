@@ -33,7 +33,7 @@ export const LoginForm: React.FC = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                     />
-                    <ConfirmButton isValid={isValid} inValidText={descriptions[lang].buttonInValid} validText={descriptions[lang].button} />
+                    <ConfirmButton isValid={isValid} />
                 </Form>
             )}
         </Formik>

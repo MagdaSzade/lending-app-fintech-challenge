@@ -24,9 +24,9 @@ export const DisplayMessage: React.FC = () => {
 
     if (message) {
         return (
-            <div className={messageContainerStyle}>
+            <div id="message" className={messageContainerStyle} onClick={onXClick}>
                 <div className={messageStyle}>
-                    <div className={closeMessageStyle} onClick={onXClick}>
+                    <div className={closeMessageStyle}>
                         <AiOutlineCloseCircle className={xStyle} />
                     </div>
                     <p className={titleStyle}>{displayedMessage.title}</p>

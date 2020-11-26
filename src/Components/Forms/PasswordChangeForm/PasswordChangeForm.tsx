@@ -37,7 +37,7 @@ export const PasswordChangeForm: React.FC = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                     />
-                    <ConfirmButton isValid={isValid} inValidText="nie można wysłać..." validText="wyślij" />
+                    <ConfirmButton isValid={isValid} />
                 </Form>
             )}
         </Formik>

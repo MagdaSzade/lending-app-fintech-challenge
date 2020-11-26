@@ -4,17 +4,15 @@ import {Button} from '@material-ui/core';
 
 interface ConfirmButtonInterface {
     isValid: boolean;
-    validText: string;
-    inValidText: string;
 }
 
-export const ConfirmButton: React.FC<ConfirmButtonInterface> = ({isValid, inValidText, validText}) => {
+export const ConfirmButton: React.FC<ConfirmButtonInterface> = ({isValid}) => {
     return isValid ? (
-        <Button type="submit">
-            {validText}
+        <Button id="submit" type="submit">
+            Wyślij
             <FiSend />
         </Button>
     ) : (
-        <Button disabled>{inValidText}</Button>
+        <Button disabled>Jeszcze nie można wysłać...</Button>
     );
 };
