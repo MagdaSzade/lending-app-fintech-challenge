@@ -7,13 +7,19 @@ import {Button} from '@material-ui/core';
 export const Header: React.FC = () => {
     const {changeLang, isLoggedin, logout} = useAppContext();
 
-    const displayLogoutButton = () => (isLoggedin ? <Button onClick={logout}>LogOut</Button> : null);
+    const displayLogoutButton = () =>
+        isLoggedin ? (
+            <Button id="logout" onClick={logout}>
+                LogOut
+            </Button>
+        ) : null;
 
     return (
         <header className={headerStyle}>
             {displayLogoutButton()}
             <div className={flex}>
                 <button
+                    id="pl"
                     className={buttonStyle}
                     onClick={() => {
                         changeLang(LANGS.PL);
@@ -23,6 +29,7 @@ export const Header: React.FC = () => {
                 </button>
                 <p className={pStyle}>/</p>
                 <button
+                    id="en"
                     className={buttonStyle}
                     onClick={() => {
                         changeLang(LANGS.EN);

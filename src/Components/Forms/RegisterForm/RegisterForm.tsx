@@ -1,7 +1,6 @@
 import React from 'react';
 import {Formik, Form} from 'formik';
 import {TextInput} from '../Common/TextInput';
-import {PhoneInput} from '../Common/PhoneInput';
 import {SelectRole} from './RegisterFormSelectRole';
 import {useAppContext} from '../../../hooks/useAppContext';
 import {useRegisterNewUser} from '../../../hooks/useRegisterNewUser';
@@ -33,7 +32,6 @@ export const RegisterForm: React.FC = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                     />
-                    <PhoneInput label={descriptions[lang].phone} name="phone" value={phone} onChange={handleChange} />
                     <TextInput
                         label={descriptions[lang].email}
                         name="email"
@@ -58,11 +56,7 @@ export const RegisterForm: React.FC = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                     />
-                    <ConfirmButton
-                        isValid={isValid}
-                        inValidText={descriptions[lang].buttonDisabled}
-                        validText={descriptions[lang].button}
-                    />
+                    <ConfirmButton isValid={isValid} />
                 </Form>
             )}
         </Formik>

@@ -24,8 +24,12 @@ export const Account: React.FC = () => {
                             </p>
                         </div>
                         <div className={buttonsStyle}>
-                            <RedirectButton path={ROUTES.USER_ACCOUNT_PAY_OUT}>wypłać</RedirectButton>
-                            <RedirectButton path={ROUTES.USER_ACCOUNT_DEPOSIT}>wpłać</RedirectButton>
+                            <RedirectButton id="payOutNav" path={ROUTES.USER_ACCOUNT_PAY_OUT}>
+                                wypłać
+                            </RedirectButton>
+                            <RedirectButton id="depositNav" path={ROUTES.USER_ACCOUNT_DEPOSIT}>
+                                wpłać
+                            </RedirectButton>
                         </div>
                     </Route>
                     <Route path={ROUTES.USER_ACCOUNT_PAY_OUT}>

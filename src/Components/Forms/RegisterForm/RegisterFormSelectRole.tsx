@@ -37,7 +37,7 @@ export const SelectRole: React.FC<SelectRoleInterface> = ({borrower, lender, val
                     checked={!isBorrowerChecked}
                     onChange={() => onChange('role', ROLE.LENDER)}
                 />
-                {!isBorrowerChecked ? <FiCheckCircle></FiCheckCircle> : <FiCircle />}
+                {!isBorrowerChecked ? <FiCheckCircle /> : <FiCircle />}
             </label>
         </div>
     );

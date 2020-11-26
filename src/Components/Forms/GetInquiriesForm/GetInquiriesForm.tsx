@@ -46,7 +46,7 @@ export const GetInquiriesForm: React.FC<GetInquiriesFormPropsInterface> = ({onSu
                         onChange={setFieldValue}
                         onBlur={handleBlur}
                     />
-                    <ConfirmButton isValid={isValid} inValidText="nie można wysłać..." validText="wyślij" />
+                    <ConfirmButton isValid={isValid} />
                 </Form>
             )}
         </Formik>
