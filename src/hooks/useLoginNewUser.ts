@@ -16,7 +16,7 @@ export const useLoginNewUser = () => {
         setIsFetching(true);
         try {
             const response = await loginUserApi(bodyFormData);
-            window.sessionStorage.setItem('auth', response.headers.authorization);
+            window.sessionStorage.setItem('x-auth', response.headers['x-auth']);
             setMessage(loginSuccesText);
             login();
             pushToHistory(ROUTES.USER_MESSAGES);
