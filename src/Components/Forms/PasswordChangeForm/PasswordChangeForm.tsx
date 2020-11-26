@@ -15,7 +15,7 @@ export const PasswordChangeForm: React.FC = () => {
                 <Form className={formContainerStyle}>
                     <TextInput
                         label="Nowe hasło"
-                        name="newPassword2"
+                        name="newPassword1"
                         value={newPassword1}
                         type="password"
                         onChange={handleChange}

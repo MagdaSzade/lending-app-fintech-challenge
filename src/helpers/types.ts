@@ -117,3 +117,8 @@ export interface ReagisterNewUserForm {
     password: string;
     roles: Array<ROLE>;
 }
+
+export interface ChangePasswordForm {
+    newPassword: string;
+    oldPassword: string;
+}
