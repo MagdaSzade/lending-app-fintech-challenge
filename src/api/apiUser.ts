@@ -1,6 +1,5 @@
 import {backend} from './backend';
 import {ReagisterNewUserForm} from '../helpers/types';
-import Axios from 'axios';
 
 export const registerNewUser = (data: ReagisterNewUserForm) => {
     return backend.post('/users/register', data);
@@ -11,5 +10,5 @@ export const getAllUserDataApi = (ID: string) => {
 };
 
 export const loginUserApi = (data: FormData) => {
-    return Axios.post('/login', data);
+    return backend.post('/users/login', data);
 };
