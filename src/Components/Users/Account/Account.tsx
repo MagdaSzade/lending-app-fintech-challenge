@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {ROUTES} from '../../../helpers/ROUTES';
 import {useAppContext} from '../../../hooks/useAppContext';
-import {BackButton} from '../Common/BackButton';
+import {AccountActionForm} from '../../Forms/AccountActionForm/AccountActionForm';
 import {RedirectButton} from '../Common/RedirectButton';
 import {redStyle, greenStyle, accountDetailStyle, spanStyle, buttonsStyle} from './Account.styles';
 
@@ -32,13 +32,8 @@ export const Account: React.FC = () => {
                             </RedirectButton>
                         </div>
                     </Route>
-                    <Route path={ROUTES.USER_ACCOUNT_PAY_OUT}>
-                        <BackButton path={ROUTES.USER_ACCOUNT} />
-                        <div>cokolwiek1</div>
-                    </Route>
-                    <Route path={ROUTES.USER_ACCOUNT_DEPOSIT}>
-                        <BackButton path={ROUTES.USER_ACCOUNT} />
-                        <div>cokolwiek2</div>
+                    <Route path={[ROUTES.USER_ACCOUNT_PAY_OUT, ROUTES.USER_ACCOUNT_DEPOSIT]}>
+                        <AccountActionForm />
                     </Route>
                 </Switch>
             </div>

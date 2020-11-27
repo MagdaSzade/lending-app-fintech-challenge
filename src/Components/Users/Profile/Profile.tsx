@@ -5,7 +5,7 @@ import {useAppContext} from '../../../hooks/useAppContext';
 import {EmailChangeForm} from '../../Forms/EmailChangeForm/EmailChangeForm';
 import {PasswordChangeForm} from '../../Forms/PasswordChangeForm/PasswordChangeForm';
 import {profileStyle, parStyle, dangerStyle} from './Profile.styles';
-import {BackButton} from '../Common/BackButton';
+import {BackButton} from '../../Forms/Common/BackButton';
 import {DeleteAccount} from './ProfileDeleteAccount';
 import {RedirectButton} from '../Common/RedirectButton';
 

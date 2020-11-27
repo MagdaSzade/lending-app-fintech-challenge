@@ -48,6 +48,22 @@ export const newOfferSuccesText: Message = {
     },
 };
 
+export const withdrwalSuccesText: Message = {
+    type: 'info',
+    title: {
+        pl: 'Wypłacono pieniądze',
+        en: 'The money was withdrwal',
+    },
+};
+
+export const depositSuccesText: Message = {
+    type: 'info',
+    title: {
+        pl: 'Wpłacono pieniądze',
+        en: 'Money has beem deposit',
+    },
+};
+
 export const changePasswordSuccesText: Message = {
     type: 'info',
     title: {
