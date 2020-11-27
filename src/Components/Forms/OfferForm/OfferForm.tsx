@@ -3,7 +3,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import {ROUTES} from '../../../helpers/ROUTES';
 import {useNewOffer} from '../../../hooks/useNewOffer';
-import {BackButton} from '../../Users/Common/BackButton';
+import {BackButton} from '../Common/BackButton';
 import {CashInput} from '../Common/CashInput';
 import {ConfirmButton} from '../Common/ConfirmButton';
 import {NumberInput} from '../Common/NumberInput';
