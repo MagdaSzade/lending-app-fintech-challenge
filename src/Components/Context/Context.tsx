@@ -8,7 +8,7 @@ export const AppContextProvider = (props: any) => {
     const [lang, changeLang] = useState(LANGS.PL);
     const [message, setMessage] = useState<Message | null>(null);
     const [isFetching, setIsFetching] = useState(false);
-    const [isLoggedin, setIsLoggedIn] = useState<boolean>(window.sessionStorage.getItem('auth') ? true : false);
+    const [isLoggedin, setIsLoggedIn] = useState<boolean>(window.sessionStorage.getItem('x-auth') ? true : false);
     const [userData, setUsersData] = useReducer(userReducer, null);
 
     const login = useCallback(() => {

@@ -36,6 +36,18 @@ export const newInquirySuccesText: Message = {
     },
 };
 
+export const newOfferSuccesText: Message = {
+    type: 'info',
+    title: {
+        pl: 'Złożono ofertę',
+        en: 'Offer was send',
+    },
+    message: {
+        pl: 'Nastąpi przekierowanie do wiadomości',
+        en: 'You will be redirected to your messages',
+    },
+};
+
 export const changePasswordSuccesText: Message = {
     type: 'info',
     title: {
