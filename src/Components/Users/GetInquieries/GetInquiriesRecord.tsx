@@ -13,7 +13,7 @@ export const Record: React.FC<RecordInterface> = ({inquiry}) => {
     const pushToHistory = usePushToHistory();
 
     const onRecordClick = () => {
-        pushToHistory(ROUTES.USER_MAKE_OFFER + `/${inquiry.id}`);
+        pushToHistory(ROUTES.USER_MAKE_OFFER + `/${inquiry.id}/${inquiry.loanAmount}/${inquiry.loanDuration}`);
     };
 
     return (
