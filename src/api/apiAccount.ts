@@ -2,9 +2,9 @@ import {AccountActionInterface} from '../Components/Forms/AccountActionForm/Acco
 import {backend} from './backend';
 
 export const withdrawalApi = (body: AccountActionInterface) => {
-    return backend.post('/inquiries', body);
+    return backend.post('/transactions/externalWithdrawal', body);
 };
 
-export const depositApi = (params: AccountActionInterface) => {
-    return backend.get('/inquiries', {params});
+export const depositApi = (body: AccountActionInterface) => {
+    return backend.post('/transactions/externalPayment', body);
 };
