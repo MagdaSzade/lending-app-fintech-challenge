@@ -5,7 +5,6 @@ import {ReagisterNewUserForm} from '../helpers/types';
 import {NewUserInterface} from '../Components/Forms/RegisterForm/RegisterForm.interface';
 import {ROUTES} from '../helpers/ROUTES';
 import {fetchAPIError} from '../helpers/helpersText';
-import {BiBasket} from 'react-icons/bi';
 
 export const useRegisterNewUser = () => {
     const {setMessage, setIsFetching} = useAppContext();
