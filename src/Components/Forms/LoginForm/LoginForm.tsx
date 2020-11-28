@@ -3,10 +3,10 @@ import {Formik, Form} from 'formik';
 import {ConfirmButton} from '../Common/ConfirmButton';
 import {TextInput} from '../Common/TextInput';
 import {useAppContext} from '../../../hooks/useAppContext';
-import {initialValues, loginFormValidation, descriptions} from './LoginForm.helpers';
-import {formContainerStyle} from './LoginForm.styles';
 import {useLoginNewUser} from '../../../hooks/useLoginNewUser';
+import {initialValues, loginFormValidation, descriptions} from './LoginForm.helpers';
 import {LoginUserInterface} from './LoginForm.interface';
+import {formContainerStyle} from '../Common/common.styles';
 
 export const LoginForm: React.FC = () => {
     const {lang} = useAppContext();

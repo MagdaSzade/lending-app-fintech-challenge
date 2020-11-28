@@ -20,9 +20,3 @@ export const radioStyle = css({
         cursor: 'pointer',
     },
 });
-
-export const formContainerStyle = css({
-    display: 'grid',
-    gridTemplateRows: 'repeat(8, 3rem)',
-    justifyItems: 'center',
-});

@@ -65,8 +65,8 @@ export const UserPageContainer: React.FC = () => {
                         <InquiryForm />
                     </DetailsConteiner>
                 </Route>
-                <Route path={ROUTES.USER_FIND_INQUIRIES}>
-                    <DetailsConteiner title="Znajdź zapytania">
+                <Route path={ROUTES.USER_FIND_INQUIRIES} exact>
+                    <DetailsConteiner title="Zapytania ofertowe">
                         <GetInquiries />
                     </DetailsConteiner>
                 </Route>
