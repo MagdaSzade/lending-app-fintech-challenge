@@ -1,10 +1,10 @@
-import {Button} from '@material-ui/core';
 import React, {useEffect, useState} from 'react';
 import {BiMenu} from 'react-icons/bi';
+import {Button} from '@material-ui/core';
 import {NavLink} from 'react-router-dom';
+import {useAppContext} from '../../hooks/useAppContext';
 import {ROUTES} from '../../helpers/ROUTES';
 import {ROLE} from '../../helpers/types';
-import {useAppContext} from '../../hooks/useAppContext';
 import {iconNavStyle, navbarConteinerStyle, displayNoneStyle, displayBlockStyle, centerIconStyle} from './NavBar.styles';
 
 export const NavBar: React.FC = () => {

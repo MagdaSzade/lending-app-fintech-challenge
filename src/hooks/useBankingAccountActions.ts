@@ -2,8 +2,8 @@ import {AccountActionInterface} from '../Components/Forms/AccountActionForm/Acco
 import {withdrawalApi, depositApi} from '../api/apiAccount';
 import {usePushToHistory} from './usePushToHistory';
 import {useAppContext} from './useAppContext';
-import {depositSuccesText, fetchAPIError, withdrwalSuccesText} from '../helpers/helpersText';
 import {ROUTES} from '../helpers/ROUTES';
+import {depositSuccesText, fetchAPIError, withdrwalSuccesText} from '../helpers/helpersText';
 
 export const useBankingAccountActions = () => {
     const {setIsFetching, setMessage} = useAppContext();

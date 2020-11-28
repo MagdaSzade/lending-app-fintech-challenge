@@ -1,6 +1,11 @@
 import {changeEmailApi, changePasswordApi, deleteUserApi} from '../../api/apiUser';
 import {EmailChangeInterface} from '../../Components/Forms/EmailChangeForm/EmailChange.interface';
 import {PasswordChangeInterface} from '../../Components/Forms/PasswordChangeForm/PasswordChangeForm.interface';
+import {useAppContext} from '../useAppContext';
+import {usePushToHistory} from '../usePushToHistory';
+import {USER_REDUCER_ACTIONS} from '../../helpers/reducers';
+import {ROUTES} from '../../helpers/ROUTES';
+import {ChangePasswordForm} from '../../helpers/types';
 import {
     changeEmailSuccesText,
     changePasswordSuccesText,
@@ -8,11 +13,6 @@ import {
     deleteAccountSuccesText,
     fetchAPIError,
 } from '../../helpers/helpersText';
-import {USER_REDUCER_ACTIONS} from '../../helpers/reducers';
-import {ROUTES} from '../../helpers/ROUTES';
-import {ChangePasswordForm} from '../../helpers/types';
-import {useAppContext} from '../useAppContext';
-import {usePushToHistory} from '../usePushToHistory';
 
 export const useUsersActions = () => {
     const {setIsFetching, setMessage, userData, setUsersData, logout} = useAppContext();

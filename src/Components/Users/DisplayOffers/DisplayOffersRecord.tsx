@@ -6,7 +6,7 @@ interface RecordInterface {
     offer: OfferInterface;
 }
 
-export const Record: React.FC<RecordInterface> = ({offer}) => {
+export const DisplayOffersRecord: React.FC<RecordInterface> = ({offer}) => {
     return (
         <div className={recordContainerStyle}>
             <div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import {InquieryInterface} from '../../../helpers/types';
+import {DisplayInquiriesRecord} from './DisplayInquiriesRecord';
 import {useAppContext} from '../../../hooks/useAppContext';
-import {Record} from './DisplayInquiriesRecord';
+import {InquieryInterface} from '../../../helpers/types';
 
 export const DisplayInquiries: React.FC = () => {
     const {userData} = useAppContext();
@@ -9,10 +9,10 @@ export const DisplayInquiries: React.FC = () => {
         return (
             <div>
                 {userData.ListOfInqueries.map((inq: InquieryInterface) => {
-                    return <Record inquiry={inq} />;
+                    return <DisplayInquiriesRecord inquiry={inq} />;
                 })}
             </div>
         );
     }
-    return <div> Wyświetlanie chwilowo nie działa... </div>;
+    return <div> Nie masz żadnych złożonych zapytań ofertowych </div>;
 };

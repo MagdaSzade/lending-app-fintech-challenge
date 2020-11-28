@@ -1,7 +1,7 @@
 import {useCallback} from 'react';
-import {USER_REDUCER_ACTIONS} from '../../helpers/reducers';
 import {useAppContext} from '../useAppContext';
 import {getAlldata} from './userActions.helpers';
+import {USER_REDUCER_ACTIONS} from '../../helpers/reducers';
 
 export const useAsyncUserData = () => {
     const {setUsersData} = useAppContext();

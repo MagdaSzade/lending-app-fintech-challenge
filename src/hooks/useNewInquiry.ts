@@ -1,9 +1,9 @@
+import {newInquiryApi} from '../api/apiInquiries';
 import {useAppContext} from './useAppContext';
 import {fetchAPIError, newInquirySuccesText} from '../helpers/helpersText';
 import {usePushToHistory} from './usePushToHistory';
 import {ROUTES} from '../helpers/ROUTES';
 import {InquiryFormInterface} from '../Components/Forms/InquiryForm/InquiryForm.interface';
-import {newInquiryApi} from '../api/apiInquiries';
 
 export const useNewInquiry = () => {
     const {setIsFetching, setMessage} = useAppContext();

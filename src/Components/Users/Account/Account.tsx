@@ -1,9 +1,9 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import {ROUTES} from '../../../helpers/ROUTES';
-import {useAppContext} from '../../../hooks/useAppContext';
 import {AccountActionForm} from '../../Forms/AccountActionForm/AccountActionForm';
 import {RedirectButton} from '../Common/RedirectButton';
+import {useAppContext} from '../../../hooks/useAppContext';
+import {ROUTES} from '../../../helpers/ROUTES';
 import {redStyle, greenStyle, accountDetailStyle, spanStyle, buttonsStyle} from './Account.styles';
 
 export const Account: React.FC = () => {

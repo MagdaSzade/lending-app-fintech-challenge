@@ -6,7 +6,7 @@ interface RecordInterface {
     inquiry: InquieryInterface;
 }
 
-export const Record: React.FC<RecordInterface> = ({inquiry}) => {
+export const DisplayInquiriesRecord: React.FC<RecordInterface> = ({inquiry}) => {
     return (
         <div className={recordContainerStyle}>
             <div>

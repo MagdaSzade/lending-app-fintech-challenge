@@ -1,10 +1,11 @@
-import {cx} from 'emotion';
 import React, {useEffect, useState} from 'react';
 import {NavLink, Route, Switch, useLocation} from 'react-router-dom';
 import {LoginForm} from '../../Forms/LoginForm/LoginForm';
 import {RegisterForm} from '../../Forms/RegisterForm/RegisterForm';
+import {cx} from 'emotion';
 import {useAppContext} from '../../../hooks/useAppContext';
 import {descriptions} from './FolderContainer.helpers';
+import {ROUTES} from '../../../helpers/ROUTES';
 import {
     markerContainerStyle,
     folderStyle,
@@ -19,7 +20,6 @@ import {
     overviewStyle,
     containerStyle,
 } from './FolderContainer.styles';
-import {ROUTES} from '../../../helpers/ROUTES';
 
 export const FolderContainer: React.FC = () => {
     const {pathname} = useLocation();

@@ -1,8 +1,8 @@
 import React from 'react';
-import {flex, buttonStyle, pStyle, headerStyle} from './Header.styles';
+import {Button} from '@material-ui/core';
 import {useAppContext} from '../../hooks/useAppContext';
 import {LANGS} from '../../helpers/types';
-import {Button} from '@material-ui/core';
+import {flex, buttonStyle, pStyle, headerStyle} from './Header.styles';
 
 export const Header: React.FC = () => {
     const {changeLang, isLoggedin, logout} = useAppContext();

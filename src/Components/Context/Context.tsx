@@ -1,15 +1,15 @@
 import React, {useState, useCallback, useMemo, useReducer} from 'react';
-
 import {AppContext} from './Contex.helpers';
-import {LANGS, Message} from '../../helpers/types';
 import {userReducer, USER_REDUCER_ACTIONS} from '../../helpers/reducers';
+import {LANGS, Message} from '../../helpers/types';
+import {testUser} from '../../helpers/testValues';
 
 export const AppContextProvider = (props: any) => {
     const [lang, changeLang] = useState(LANGS.PL);
     const [message, setMessage] = useState<Message | null>(null);
     const [isFetching, setIsFetching] = useState(false);
     const [isLoggedin, setIsLoggedIn] = useState<boolean>(window.sessionStorage.getItem('x-auth') ? true : false);
-    const [userData, setUsersData] = useReducer(userReducer, null);
+    const [userData, setUsersData] = useReducer(userReducer, testUser);
 
     const login = useCallback(() => {
         setIsLoggedIn(true);

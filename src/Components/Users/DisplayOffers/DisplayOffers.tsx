@@ -1,7 +1,7 @@
 import React from 'react';
-import {OfferInterface} from '../../../helpers/types';
+import {DisplayOffersRecord} from './DisplayOffersRecord';
 import {useAppContext} from '../../../hooks/useAppContext';
-import {Record} from './DisplayOffersRecord';
+import {OfferInterface} from '../../../helpers/types';
 
 export const DisplayOffers: React.FC = () => {
     const {userData} = useAppContext();
@@ -9,7 +9,7 @@ export const DisplayOffers: React.FC = () => {
         return (
             <div>
                 {userData.ListOfOffers.map((offer: OfferInterface) => {
-                    return <Record offer={offer} />;
+                    return <DisplayOffersRecord offer={offer} />;
                 })}
             </div>
         );
