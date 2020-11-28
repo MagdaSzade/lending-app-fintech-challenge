@@ -1,7 +1,7 @@
 import React from 'react';
 import {useAppContext} from '../../../hooks/useAppContext';
 import {messageListStyle} from './MessageList.styles';
-import {Record} from './MessageListRecord';
+import {MessageListRecord} from './MessageListRecord';
 
 export const MessagesList: React.FC = () => {
     const {userData} = useAppContext();
@@ -13,7 +13,7 @@ export const MessagesList: React.FC = () => {
     return (
         <ul className={messageListStyle}>
             {userData?.ListOfMessages.map(message => {
-                return <Record key={message.ID} {...message} />;
+                return <MessageListRecord key={message.ID} {...message} />;
             })}
         </ul>
     );

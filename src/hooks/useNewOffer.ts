@@ -1,9 +1,9 @@
+import {newOfferApi} from '../api/apiOffers';
 import {useAppContext} from './useAppContext';
-import {fetchAPIError, newOfferSuccesText} from '../helpers/helpersText';
 import {usePushToHistory} from './usePushToHistory';
 import {ROUTES} from '../helpers/ROUTES';
-import {newOfferApi} from '../api/apiOffers';
 import {OfferFormInterface} from '../Components/Forms/OfferForm/OfferForm.interface';
+import {fetchAPIError, newOfferSuccesText} from '../helpers/helpersText';
 
 export const useNewOffer = () => {
     const {setIsFetching, setMessage} = useAppContext();

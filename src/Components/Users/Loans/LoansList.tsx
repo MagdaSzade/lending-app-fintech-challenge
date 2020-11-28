@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import {ROUTES} from '../../../helpers/ROUTES';
-import {LOAN_STATUS} from '../../../helpers/types';
+import {LoanListRecord} from './LoansListRecord';
 import {useAppContext} from '../../../hooks/useAppContext';
 import {usePushToHistory} from '../../../hooks/usePushToHistory';
 import {startingFilters} from './LoansList.helpers';
-import {Record} from './LoansListRecord';
+import {ROUTES} from '../../../helpers/ROUTES';
+import {LOAN_STATUS} from '../../../helpers/types';
 
 export const LoansList: React.FC = () => {
     const {userData} = useAppContext();
     const pushToHistry = usePushToHistory();
     const {location} = useHistory();
-    const [filter, setfilter] = useState(startingFilters(location.pathname));
+    const [filter, handleFilterChange] = useState(startingFilters(location.pathname));
 
     const onSelectChange = (e: any) => {
-        setfilter(e.target.value);
+        handleFilterChange(e.target.value);
         switch (e.target.value) {
             case LOAN_STATUS.ALL:
                 pushToHistry(ROUTES.USER_LOANS);
@@ -39,7 +39,7 @@ export const LoansList: React.FC = () => {
                 <ul>
                     {userData.ListOfLoans.map(loan => {
                         if (loan.status === filter || filter === LOAN_STATUS.ALL) {
-                            return <Record {...loan} />;
+                            return <LoanListRecord {...loan} />;
                         }
                         return null;
                     })}

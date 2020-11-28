@@ -2,7 +2,7 @@ import React from 'react';
 import {LoanInterface, LOAN_STATUS} from '../../../helpers/types';
 import {recordContainerStyle} from './LoansList.styles';
 
-export const Record: React.FC<LoanInterface> = ({
+export const LoanListRecord: React.FC<LoanInterface> = ({
     ID,
     lenderName,
     borrowerName,

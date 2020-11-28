@@ -1,8 +1,8 @@
+import {registerNewUserApi} from '../api/apiUser';
 import {useAppContext} from './useAppContext';
-import {registerNewUser} from '../api/apiUser';
-import {NewUserInterface} from '../Components/Forms/RegisterForm/RegisterForm.interface';
 import {usePushToHistory} from './usePushToHistory';
 import {ReagisterNewUserForm} from '../helpers/types';
+import {NewUserInterface} from '../Components/Forms/RegisterForm/RegisterForm.interface';
 import {ROUTES} from '../helpers/ROUTES';
 import {fetchAPIError} from '../helpers/helpersText';
 
@@ -21,7 +21,7 @@ export const useRegisterNewUser = () => {
                 roles: [newUser.role],
             };
 
-            const response = await registerNewUser(newUserForm);
+            const response = await registerNewUserApi(newUserForm);
             if (response.status === 201) {
                 setMessage({
                     type: 'info',

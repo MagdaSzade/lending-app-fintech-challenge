@@ -17,11 +17,6 @@ export const dangerStyle = css({
     color: 'red !important',
 });
 
-export const buttonStyle = css({
-    marginBottom: '0.3rem !important',
-    width: '200px',
-});
-
 export const popUpStyle = css({
     position: 'absolute',
     display: 'flex',
@@ -35,8 +30,7 @@ export const popUpStyle = css({
     backgroundColor: CSS_COLORS.BACKGROUND,
 });
 
-export const backStyle = css({
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+export const buttonStyle = css({
+    marginBottom: '0.3rem !important',
+    width: '200px',
 });

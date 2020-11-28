@@ -1,8 +1,8 @@
-import {Button} from '@material-ui/core';
 import React from 'react';
-import {ROUTES} from '../../../helpers/ROUTES';
+import {Button} from '@material-ui/core';
 import {usePushToHistory} from '../../../hooks/usePushToHistory';
-import {buttonStyle} from '../Profile/Profile.styles';
+import {ROUTES} from '../../../helpers/ROUTES';
+import {buttonStyle} from './common.style';
 
 interface RedirectButtonInterface {
     path: ROUTES;

@@ -1,20 +1,20 @@
 import React, {useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom';
-import {ROUTES} from '../../../helpers/ROUTES';
 import {MessagesList} from '../../Users/Messages/MessagesList';
 import {Profile} from '../../Users/Profile/Profile';
 import {LoansList} from '../../Users/Loans/LoansList';
 import {NavBar} from '../../NavBar/NavBar';
-import {DetailsConteiner} from '../DetailContainer/DetailsConteiner';
-import {userContainerStyle} from './UserPageContainer.styles';
-import {Account} from '../../Users/Account/Account';
-import {useAsyncUserData} from '../../../hooks/usersActions/useAsyncUserData';
-import {useAppContext} from '../../../hooks/useAppContext';
+import {DetailsContainer} from '../DetailContainer/DetailsContainer';
 import {InquiryForm} from '../../Forms/InquiryForm/InquiryForm';
 import {GetInquiries} from '../../Users/GetInquieries/GetInqueries';
 import {DisplayInquiries} from '../../Users/DisplayInquiries/DisplayInquiries';
 import {DisplayOffers} from '../../Users/DisplayOffers/DisplayOffers';
+import {Account} from '../../Users/Account/Account';
 import {OfferForm} from '../../Forms/OfferForm/OfferForm';
+import {userContainerStyle} from './UserPageContainer.styles';
+import {useAsyncUserData} from '../../../hooks/usersActions/useAsyncUserData';
+import {useAppContext} from '../../../hooks/useAppContext';
+import {ROUTES} from '../../../helpers/ROUTES';
 
 export const UserPageContainer: React.FC = () => {
     const getUser = useAsyncUserData();
@@ -31,49 +31,49 @@ export const UserPageContainer: React.FC = () => {
             <NavBar />
             <Switch>
                 <Route path={ROUTES.USER_MESSAGES}>
-                    <DetailsConteiner title="Wiadomości">
+                    <DetailsContainer title="Wiadomości">
                         <MessagesList />
-                    </DetailsConteiner>
+                    </DetailsContainer>
                 </Route>
                 <Route path={ROUTES.USER_PROFILE}>
-                    <DetailsConteiner title="Twoje konto">
+                    <DetailsContainer title="Twoje konto">
                         <Profile />
-                    </DetailsConteiner>
+                    </DetailsContainer>
                 </Route>
                 <Route path={ROUTES.USER_ACCOUNT}>
-                    <DetailsConteiner title="Twoje konto bankowe">
+                    <DetailsContainer title="Twoje konto bankowe">
                         <Account />
-                    </DetailsConteiner>
+                    </DetailsContainer>
                 </Route>
                 <Route path={ROUTES.USER_LOANS}>
-                    <DetailsConteiner title="pożyczki">
+                    <DetailsContainer title="pożyczki">
                         <LoansList />
-                    </DetailsConteiner>
+                    </DetailsContainer>
                 </Route>
                 <Route path={ROUTES.USER_OFFERS}>
-                    <DetailsConteiner title="Złożone oferty">
+                    <DetailsContainer title="Złożone oferty">
                         <DisplayOffers />
-                    </DetailsConteiner>
+                    </DetailsContainer>
                 </Route>
                 <Route path={ROUTES.USER_INQUIRIES}>
-                    <DetailsConteiner title="Złożone zapytania">
+                    <DetailsContainer title="Złożone zapytania">
                         <DisplayInquiries />
-                    </DetailsConteiner>
+                    </DetailsContainer>
                 </Route>
                 <Route path={ROUTES.USER_MAKE_INQUIRIES}>
-                    <DetailsConteiner title="Zapytaj o pożyczkę">
+                    <DetailsContainer title="Zapytaj o pożyczkę">
                         <InquiryForm />
-                    </DetailsConteiner>
+                    </DetailsContainer>
                 </Route>
-                <Route path={ROUTES.USER_FIND_INQUIRIES}>
-                    <DetailsConteiner title="Znajdź zapytania">
+                <Route path={ROUTES.USER_FIND_INQUIRIES} exact>
+                    <DetailsContainer title="Zapytania ofertowe">
                         <GetInquiries />
-                    </DetailsConteiner>
+                    </DetailsContainer>
                 </Route>
                 <Route path={ROUTES.USER_MAKE_OFFER}>
-                    <DetailsConteiner title="Złóż ofertę">
+                    <DetailsContainer title="Złóż ofertę">
                         <OfferForm />
-                    </DetailsConteiner>
+                    </DetailsContainer>
                 </Route>
             </Switch>
         </div>

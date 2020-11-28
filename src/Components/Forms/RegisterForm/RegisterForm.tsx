@@ -2,12 +2,12 @@ import React from 'react';
 import {Formik, Form} from 'formik';
 import {TextInput} from '../Common/TextInput';
 import {SelectRole} from './RegisterFormSelectRole';
+import {ConfirmButton} from '../Common/ConfirmButton';
 import {useAppContext} from '../../../hooks/useAppContext';
 import {useRegisterNewUser} from '../../../hooks/useRegisterNewUser';
 import {initialValues, registerFormValidation, descriptions} from './RegisterForm.helpers';
-import {formContainerStyle} from './RegisterForm.styles';
 import {NewUserInterface} from './RegisterForm.interface';
-import {ConfirmButton} from '../Common/ConfirmButton';
+import {formContainerStyle} from '../Common/common.styles';
 
 export const RegisterForm: React.FC = () => {
     const {lang} = useAppContext();

@@ -4,7 +4,7 @@ import {ConfirmButton} from '../Common/ConfirmButton';
 import {TextInput} from '../Common/TextInput';
 import {useUsersActions} from '../../../hooks/usersActions/useUserActions';
 import {initialValues, passwordChangeFormValidation} from './PasswordChangeForm.helpers';
-import {formContainerStyle} from './PasswordChangeForm.styles';
+import {formContainerStyle} from '../Common/common.styles';
 
 export const PasswordChangeForm: React.FC = () => {
     const {changePassword} = useUsersActions();

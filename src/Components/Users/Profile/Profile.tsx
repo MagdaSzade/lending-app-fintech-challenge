@@ -1,13 +1,13 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import {ROUTES} from '../../../helpers/ROUTES';
-import {useAppContext} from '../../../hooks/useAppContext';
 import {EmailChangeForm} from '../../Forms/EmailChangeForm/EmailChangeForm';
 import {PasswordChangeForm} from '../../Forms/PasswordChangeForm/PasswordChangeForm';
-import {profileStyle, parStyle, dangerStyle} from './Profile.styles';
 import {BackButton} from '../../Forms/Common/BackButton';
 import {DeleteAccount} from './ProfileDeleteAccount';
 import {RedirectButton} from '../Common/RedirectButton';
+import {useAppContext} from '../../../hooks/useAppContext';
+import {ROUTES} from '../../../helpers/ROUTES';
+import {profileStyle, parStyle, dangerStyle} from './Profile.styles';
 
 export const Profile: React.FC = () => {
     const {userData} = useAppContext();

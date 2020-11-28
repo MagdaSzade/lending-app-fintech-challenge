@@ -1,9 +1,9 @@
 import {useAppContext} from './useAppContext';
-import {fetchAPIError} from '../helpers/helpersText';
 import {getInquieiesApi} from '../api/apiInquiries';
 import {InquieryInterface} from '../helpers/types';
 import {useCallback, useState} from 'react';
 import {GetInquiryFormInterface} from '../Components/Forms/GetInquiriesForm/GetInquiriesForm.interface';
+import {fetchAPIError} from '../helpers/helpersText';
 
 export const useGetInquiries = () => {
     const [listOfInquieries, setListOfInquieries] = useState<null | Array<InquieryInterface>>(null);

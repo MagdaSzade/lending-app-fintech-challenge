@@ -15,5 +15,3 @@ export const recordContainerStyle = css({
         fontWeight: 'bold',
     },
 });
-
-//export const
