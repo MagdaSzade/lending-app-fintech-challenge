@@ -2,7 +2,6 @@ import React, {useState, useCallback, useMemo, useReducer} from 'react';
 import {AppContext} from './Contex.helpers';
 import {userReducer, USER_REDUCER_ACTIONS} from '../../helpers/reducers';
 import {LANGS, Message} from '../../helpers/types';
-import {testUser} from '../../helpers/testValues';
 
 export const AppContextProvider = (props: any) => {
     const [lang, changeLang] = useState(LANGS.PL);
