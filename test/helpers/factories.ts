@@ -8,7 +8,15 @@ import {LoginUserInterface} from '../../src/Components/Forms/LoginForm/LoginForm
 import {OfferFormInterface} from '../../src/Components/Forms/OfferForm/OfferForm.interface';
 import {PasswordChangeInterface} from '../../src/Components/Forms/PasswordChangeForm/PasswordChangeForm.interface';
 import {NewUserInterface} from '../../src/Components/Forms/RegisterForm/RegisterForm.interface';
-import {INQIRY_STATUS, InquieryInterface, LANGS, ReagisterNewUserForm, ROLE} from '../../src/helpers/types';
+import {
+    AccountInterface,
+    INQIRY_STATUS,
+    InquieryInterface,
+    LANGS,
+    ReagisterNewUserForm,
+    ROLE,
+    UserInterface,
+} from '../../src/helpers/types';
 
 export const contextInterfaceFactory = Factory.Sync.makeFactory<ContextInterface>({
     lang: LANGS.PL,
@@ -22,6 +30,26 @@ export const contextInterfaceFactory = Factory.Sync.makeFactory<ContextInterface
     logout: () => {},
     userData: null,
     setUsersData: () => {},
+});
+
+export const accountFactory = Factory.Sync.makeFactory<AccountInterface>({
+    ID: 'string',
+    accountNumber: '0000 0000 0000 0000',
+    accountState: 0,
+});
+
+export const userFactory = Factory.Sync.makeFactory<UserInterface>({
+    userID: 'testID',
+    name: 'testName',
+    surname: 'testSurname',
+    phone: '111111111',
+    email: 'test@test.pl',
+    role: ROLE.BORROWER,
+    account: accountFactory.build(),
+    ListOfMessages: [],
+    ListOfInqueries: [],
+    ListOfOffers: [],
+    ListOfLoans: [],
 });
 
 export const factoryReagisterNewUserForm = Factory.Sync.makeFactory<ReagisterNewUserForm>({

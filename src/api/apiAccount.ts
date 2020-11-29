@@ -1,10 +1,10 @@
 import {AccountActionInterface} from '../Components/Forms/AccountActionForm/AccountActionForm.interface';
 import {backend} from './backend';
 
-export const withdrawalApi = (body: AccountActionInterface) => {
-    return backend.post('/transactions/externalWithdrawal', body);
+export const withdrawalApi = (params: AccountActionInterface, id: string) => {
+    return backend.post(`/transactions/externalWithdrawal/${id}`, {params});
 };
 
-export const depositApi = (body: AccountActionInterface) => {
-    return backend.post('/transactions/externalPayment', body);
+export const depositApi = (params: AccountActionInterface, id: string) => {
+    return backend.post(`/transactions/externalPayment/${id}`, {params});
 };

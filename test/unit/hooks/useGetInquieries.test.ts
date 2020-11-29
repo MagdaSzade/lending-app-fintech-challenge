@@ -3,8 +3,7 @@ import {mocked} from 'ts-jest/utils';
 import {act, renderHook} from '@testing-library/react-hooks';
 import {getInquieiesApi} from '../../../src/api/apiInquiries';
 import {useAppContext} from '../../../src/hooks/useAppContext';
-import {getInquiryFormInterfaceFactory, inquieryInterfaceFactory, inquiryFormInterfaceFactory} from '../../helpers/factories';
-import {ROUTES} from '../../../src/helpers/ROUTES';
+import {getInquiryFormInterfaceFactory, inquieryInterfaceFactory} from '../../helpers/factories';
 
 jest.mock('../../../src/api/apiInquiries', () => {
     return {

@@ -1,4 +1,4 @@
-import {UserBorrowerInterface, UserLenderInterface} from './types';
+import {UserInterface} from './types';
 
 export interface UserActionInterface {
     type: USER_REDUCER_ACTIONS;
@@ -11,10 +11,7 @@ export enum USER_REDUCER_ACTIONS {
 }
 
 interface UserReducerInterface {
-    (user: UserBorrowerInterface | UserLenderInterface | null, action: UserActionInterface):
-        | UserBorrowerInterface
-        | UserLenderInterface
-        | null;
+    (user: UserInterface | null, action: UserActionInterface): UserInterface | null;
 }
 
 export const userReducer: UserReducerInterface = (user, action) => {

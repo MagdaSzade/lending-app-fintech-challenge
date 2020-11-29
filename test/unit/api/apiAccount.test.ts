@@ -23,10 +23,12 @@ describe('depositApi', () => {
         const data = {data: 'mocked data'};
         mocked(apiBackend.backend.post).mockResolvedValue(data);
         const newAction = accountActionInterfaceFactory.build();
+        const expectedValue = {params: newAction};
+        const id = 'testId';
 
-        const request = await depositApi(newAction);
+        const request = await depositApi(newAction, id);
         expect(request.data).toEqual(data.data);
-        expect(apiBackend.backend.post).toHaveBeenCalledWith('/transactions/externalPayment', newAction);
+        expect(apiBackend.backend.post).toHaveBeenCalledWith(`/transactions/externalPayment/${id}`, expectedValue);
     });
 });
 
@@ -39,9 +41,11 @@ describe('withdrwaltApi', () => {
         const data = {data: 'mocked data'};
         mocked(apiBackend.backend.post).mockResolvedValue(data);
         const newAction = accountActionInterfaceFactory.build();
+        const expectedValue = {params: newAction};
+        const id = 'testId';
 
-        const request = await withdrawalApi(newAction);
+        const request = await withdrawalApi(newAction, id);
         expect(request.data).toEqual(data.data);
-        expect(apiBackend.backend.post).toHaveBeenCalledWith('/transactions/externalWithdrawal', newAction);
+        expect(apiBackend.backend.post).toHaveBeenCalledWith(`/transactions/externalWithdrawal/${id}`, expectedValue);
     });
 });

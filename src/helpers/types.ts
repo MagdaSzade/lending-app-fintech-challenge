@@ -91,7 +91,7 @@ export interface AccountInterface {
     accountState: number;
 }
 
-interface UserInterface {
+export interface UserInterface {
     userID: string;
     name: string;
     surname: string;
@@ -104,10 +104,6 @@ interface UserInterface {
     ListOfOffers: Array<OfferInterface>;
     ListOfInqueries: Array<InquieryInterface>;
 }
-
-export interface UserBorrowerInterface extends UserInterface {}
-
-export interface UserLenderInterface extends UserInterface {}
 
 export interface ReagisterNewUserForm {
     name: string;
