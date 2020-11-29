@@ -1,6 +1,6 @@
-import {registerFormValidation} from '../../../../src/Components/Forms/RegisterForm/RegisterForm.helpers';
-import {LANGS} from '../../../../src/helpers/types';
-import {newUserFactory} from '../../../helpers/factories';
+import {registerFormValidation} from '../../../src/Components/Forms/RegisterForm/RegisterForm.helpers';
+import {LANGS} from '../../../src/helpers/types';
+import {newUserFactory} from '../../helpers/factories';
 
 describe('registerFormValidation', () => {
     it('should return errors.name if name not filled', () => {

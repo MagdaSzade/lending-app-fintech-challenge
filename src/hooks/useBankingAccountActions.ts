@@ -8,30 +8,35 @@ import {depositSuccesText, fetchAPIError, withdrwalSuccesText} from '../helpers/
 export const useBankingAccountActions = () => {
     const {setIsFetching, setMessage} = useAppContext();
     const pushToHistory = usePushToHistory();
+    const {userData} = useAppContext();
 
     const deposit = async (data: AccountActionInterface) => {
-        setIsFetching(true);
-        try {
-            await depositApi(data);
-            setMessage(depositSuccesText);
-            pushToHistory(ROUTES.USER_ACCOUNT);
-        } catch (err) {
-            setMessage(fetchAPIError);
-        } finally {
-            setIsFetching(false);
+        if (userData) {
+            setIsFetching(true);
+            try {
+                await depositApi(data, userData?.userID);
+                setMessage(depositSuccesText);
+                pushToHistory(ROUTES.USER_ACCOUNT);
+            } catch (err) {
+                setMessage(fetchAPIError);
+            } finally {
+                setIsFetching(false);
+            }
         }
     };
 
     const withdrawal = async (data: AccountActionInterface) => {
-        setIsFetching(true);
-        try {
-            await withdrawalApi(data);
-            setMessage(withdrwalSuccesText);
-            pushToHistory(ROUTES.USER_ACCOUNT);
-        } catch (err) {
-            setMessage(fetchAPIError);
-        } finally {
-            setIsFetching(false);
+        if (userData) {
+            setIsFetching(true);
+            try {
+                await withdrawalApi(data, userData?.userID);
+                setMessage(withdrwalSuccesText);
+                pushToHistory(ROUTES.USER_ACCOUNT);
+            } catch (err) {
+                setMessage(fetchAPIError);
+            } finally {
+                setIsFetching(false);
+            }
         }
     };
     return {deposit, withdrawal};

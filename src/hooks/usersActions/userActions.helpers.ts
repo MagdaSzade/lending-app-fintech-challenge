@@ -1,13 +1,13 @@
 import {getAllUserDataApi} from '../../api/apiUser';
 import jwt_decode from 'jwt-decode';
-import {ROLE, UserBorrowerInterface, UserLenderInterface} from '../../helpers/types';
+import {ROLE, UserInterface} from '../../helpers/types';
 
 export const getAlldata = async () => {
     const token = window.sessionStorage.getItem('x-auth');
     if (token) {
         const decoded: any = jwt_decode(token);
         const {data} = await getAllUserDataApi(decoded['user-id']);
-        let user: UserBorrowerInterface | UserLenderInterface | null = null;
+        let user: UserInterface | null = null;
         if (data.roles[0].name === ROLE.BORROWER) {
             user = {
                 email: data.email,

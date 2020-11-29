@@ -1,29 +1,23 @@
 import React from 'react';
-import {Router} from 'react-router-dom';
-import {createMemoryHistory} from 'history';
-import {render, screen} from '@testing-library/react';
+import {FolderContainer} from '../../../../src/Components/Containers/FolderContainer/FolderContainer';
+import {screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import {mocked} from 'ts-jest/utils';
-import {ROUTES} from '../../../src/helpers/ROUTES';
-import {contextInterfaceFactory} from '../../helpers/factories';
-import {useAppContext} from '../../../src/hooks/useAppContext';
-import {LANGS} from '../../../src/helpers/types';
-import {LoginForm} from '../../../src/Components/Forms/LoginForm/LoginForm';
-import {RegisterForm} from '../../../src/Components/Forms/RegisterForm/RegisterForm';
-import {FolderContainer} from '../../../src/Components/Conteiners/FolderContainer/FolderContainer';
+import {ROUTES} from '../../../../src/helpers/ROUTES';
+import {contextInterfaceFactory} from '../../../helpers/factories';
+import {useAppContext} from '../../../../src/hooks/useAppContext';
+import {LANGS} from '../../../../src/helpers/types';
+import {LoginForm} from '../../../../src/Components/Forms/LoginForm/LoginForm';
+import {RegisterForm} from '../../../../src/Components/Forms/RegisterForm/RegisterForm';
+import {renderWithRouter} from '../../../helpers/renderWithRouter';
 
-export const renderWithRouter = (ui: React.ReactNode, entries?: string[]) => {
-    const history = createMemoryHistory({initialEntries: entries});
-    const renderResult = render(<Router history={history}>{ui}</Router>);
-    return {...renderResult, history};
-};
-
-jest.mock('../../../src/Components/Forms/LoginForm/LoginForm');
-jest.mock('../../../src/Components/Forms/RegisterForm/RegisterForm');
-jest.mock('../../../src/hooks/useAppContext');
+jest.mock('../../../../src/Components/Forms/LoginForm/LoginForm');
+jest.mock('../../../../src/Components/Forms/RegisterForm/RegisterForm');
+jest.mock('../../../../src/hooks/useAppContext');
 
 describe('FolderComponent', () => {
     beforeEach(() => {
+        jest.clearAllMocks();
         mocked(LoginForm).mockReturnValue(<h1>LoginForm</h1>);
         mocked(RegisterForm).mockReturnValue(<h1>RegisterForm</h1>);
     });

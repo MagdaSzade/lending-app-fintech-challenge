@@ -1,4 +1,4 @@
-import {AccountInterface, LoanInterface, LOAN_STATUS, ROLE, UserBorrowerInterface, UserMessageInterface} from './types';
+import {AccountInterface, LoanInterface, LOAN_STATUS, ROLE, UserInterface, UserMessageInterface} from './types';
 
 const testMessages1: UserMessageInterface = {
     title: 'TO JEST TESTOWA MESSAGE',
@@ -54,7 +54,7 @@ const testAccount: AccountInterface = {
     accountState: -1200,
 };
 
-export const testUser: UserBorrowerInterface = {
+export const testUser: UserInterface = {
     userID: 'testID',
     name: 'testName',
     surname: 'testSurname',
@@ -68,7 +68,7 @@ export const testUser: UserBorrowerInterface = {
     ListOfLoans: [testLoan1, testLoan2],
 };
 
-export const testBorrower: UserBorrowerInterface = {
+export const testBorrower: UserInterface = {
     userID: 'testID',
     name: 'testName',
     surname: 'testSurname',
