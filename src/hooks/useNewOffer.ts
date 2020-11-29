@@ -6,10 +6,12 @@ import {OfferFormInterface} from '../Components/Forms/OfferForm/OfferForm.interf
 import {fetchAPIError, newOfferSuccesText} from '../helpers/helpersText';
 
 export const useNewOffer = () => {
-    const {setIsFetching, setMessage} = useAppContext();
+    const {setIsFetching, setMessage, userData} = useAppContext();
     const pushToHistory = usePushToHistory();
 
     const newOffer = async (offer: OfferFormInterface) => {
+        offer.lenderId = userData?.userID;
+        console.log(offer);
         setIsFetching(true);
         try {
             await newOfferApi(offer);

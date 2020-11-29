@@ -2,9 +2,9 @@ import {FormikErrors} from 'formik';
 import {GetInquiryFormInterface} from './GetInquiriesForm.interface';
 
 export const initialValues: GetInquiryFormInterface = {
-    minAmount: 1000,
-    maxAmount: 5000,
-    minLoanDuration: 12,
+    minAmount: 100,
+    maxAmount: 10000,
+    minLoanDuration: 1,
     maxLoanDuration: 24,
 };
 

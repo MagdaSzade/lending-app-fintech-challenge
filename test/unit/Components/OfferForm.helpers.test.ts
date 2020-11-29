@@ -5,7 +5,7 @@ import {offerFormInterfaceFactory} from '../../helpers/factories';
 enum ERRORS_TYPES {
     AMOUNT = 'proposedAmount',
     DURATION = 'propposedDuration',
-    INTREST_RATE = 'annualIntrestRate',
+    INTREST_RATE = 'annualInterestRate',
 }
 
 describe('offerFormValidation', () => {
@@ -14,8 +14,8 @@ describe('offerFormValidation', () => {
         [offerFormInterfaceFactory.build({proposedAmount: 99}), ERRORS_TYPES.AMOUNT],
         [offerFormInterfaceFactory.build({propposedDuration: 0}), ERRORS_TYPES.DURATION],
         [offerFormInterfaceFactory.build({propposedDuration: 25}), ERRORS_TYPES.DURATION],
-        [offerFormInterfaceFactory.build({annualIntrestRate: 0}), ERRORS_TYPES.INTREST_RATE],
-        [offerFormInterfaceFactory.build({annualIntrestRate: 13}), ERRORS_TYPES.INTREST_RATE],
+        [offerFormInterfaceFactory.build({annualInterestRate: 0}), ERRORS_TYPES.INTREST_RATE],
+        [offerFormInterfaceFactory.build({annualInterestRate: 13}), ERRORS_TYPES.INTREST_RATE],
     ])('for %o errors %s should be defined', (values: OfferFormInterface, name: ERRORS_TYPES) => {
         const result = offerFormValidation(values);
         expect(result[name]).toBeDefined();
@@ -26,8 +26,8 @@ describe('offerFormValidation', () => {
         [offerFormInterfaceFactory.build({proposedAmount: 100}), ERRORS_TYPES.AMOUNT],
         [offerFormInterfaceFactory.build({propposedDuration: 1}), ERRORS_TYPES.DURATION],
         [offerFormInterfaceFactory.build({propposedDuration: 24}), ERRORS_TYPES.DURATION],
-        [offerFormInterfaceFactory.build({annualIntrestRate: 0.1}), ERRORS_TYPES.INTREST_RATE],
-        [offerFormInterfaceFactory.build({annualIntrestRate: 12}), ERRORS_TYPES.INTREST_RATE],
+        [offerFormInterfaceFactory.build({annualInterestRate: 0.1}), ERRORS_TYPES.INTREST_RATE],
+        [offerFormInterfaceFactory.build({annualInterestRate: 12}), ERRORS_TYPES.INTREST_RATE],
     ])('for %o errors %s should not be defined', (values: OfferFormInterface, name: ERRORS_TYPES) => {
         const result = offerFormValidation(values);
         expect(result[name]).toBeUndefined();

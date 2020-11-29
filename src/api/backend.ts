@@ -7,6 +7,6 @@ export const backend = axios.create({
         password: 'mis_yogi',
     },
     headers: {
-        'x-auth': window.sessionStorage.getItem('x-auth'),
+        'X-Auth': window.sessionStorage.getItem('x-auth'),
     },
 });

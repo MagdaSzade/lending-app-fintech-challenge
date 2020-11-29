@@ -2,6 +2,7 @@ import {css} from 'emotion';
 import {CSS_COLORS} from '../../../helpers/globalCss';
 
 export const detailsContainerStyle = css({
+    position: 'relative',
     display: 'grid',
     gridTemplateRows: '3rem auto',
     width: '100%',

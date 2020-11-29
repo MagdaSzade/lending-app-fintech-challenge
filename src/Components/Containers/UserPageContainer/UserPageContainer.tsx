@@ -6,7 +6,7 @@ import {LoansList} from '../../Users/Loans/LoansList';
 import {NavBar} from '../../NavBar/NavBar';
 import {DetailsContainer} from '../DetailContainer/DetailsContainer';
 import {InquiryForm} from '../../Forms/InquiryForm/InquiryForm';
-import {GetInquiries} from '../../Users/GetInquieries/GetInqueries';
+import {GetInquiries} from '../../Users/GetInquieries/GetInquiries';
 import {DisplayInquiries} from '../../Users/DisplayInquiries/DisplayInquiries';
 import {DisplayOffers} from '../../Users/DisplayOffers/DisplayOffers';
 import {Account} from '../../Users/Account/Account';
