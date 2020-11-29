@@ -1,6 +1,7 @@
 export interface OfferFormInterface {
-    annualIntrestRate: number;
+    annualInterestRate: number;
     proposedAmount: number;
     propposedDuration: number;
-    inquiryID: string;
+    inquiryId: string;
+    lenderId?: string;
 }

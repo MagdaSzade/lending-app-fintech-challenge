@@ -5,7 +5,7 @@ export const folderStyle = css({
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     gridGap: '0.5rem',
-    gridTemplateRows: 'auto 2.5rem auto',
+    gridTemplateRows: '400px',
     maxWidth: '720px',
     minWidth: '700px',
     margin: '0 auto',

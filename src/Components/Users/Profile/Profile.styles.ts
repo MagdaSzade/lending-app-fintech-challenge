@@ -3,7 +3,6 @@ import {CSS_COLORS} from '../../../helpers/globalCss';
 
 export const profileStyle = css({
     display: 'flex',
-    justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
 });

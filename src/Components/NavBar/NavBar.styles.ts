@@ -1,10 +1,17 @@
 import {css} from 'emotion';
 import {CSS_COLORS} from '../../helpers/globalCss';
 
+export const container = css({
+    //    position: 'absolute'
+    zIndex: 30,
+    width: '100%',
+});
+
 export const navbarConteinerStyle = css({
     display: 'flex',
     justifyContent: 'center',
-    '@media (max-width: 690px)': {
+    flexDirection: 'row',
+    '@media (max-width: 500px)': {
         flexDirection: 'column',
         backgroundColor: CSS_COLORS.BACKGROUND,
     },

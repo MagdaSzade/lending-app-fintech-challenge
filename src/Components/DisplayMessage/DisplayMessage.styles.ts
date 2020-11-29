@@ -6,6 +6,7 @@ export const messageContainerStyle = css({
     top: 0,
     left: 0,
     width: '100%',
+    zIndex: 40,
 });
 
 export const messageStyle = css({

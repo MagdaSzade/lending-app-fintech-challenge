@@ -3,13 +3,14 @@ import {css} from 'emotion';
 export const formContainerStyle = css({
     display: 'grid',
     gridTemplateRows: '3rem',
+    gridAutoRows: '3rem',
     justifyItems: 'center',
 });
 
 export const inputContainer = css({
     position: 'relative',
     display: 'grid',
-    gridTemplateColumns: '8rem 5fr',
+    gridTemplateColumns: '10rem auto',
     justifyItems: 'left',
     alignItems: 'center',
 });
@@ -22,9 +23,13 @@ export const errorStyle = css({
 });
 
 export const backStylePosition = css({
-    position: 'fixed',
-    top: '0.5rem',
-    left: '5.5rem',
+    position: 'absolute',
+    top: '-6rem',
+    left: '0rem',
+    '@media(max-width: 700px)': {
+        top: '-4.8rem',
+        left: '4rem',
+    },
 });
 
 export const backStyle = css({

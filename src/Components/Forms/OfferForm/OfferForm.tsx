@@ -18,7 +18,7 @@ export const OfferForm: React.FC = () => {
 
     return (
         <Formik onSubmit={newOffer} initialValues={init} validateOnChange validate={offerFormValidation}>
-            {({values: {annualIntrestRate, proposedAmount, propposedDuration}, handleBlur, setFieldValue, isValid}) => (
+            {({values: {annualInterestRate, proposedAmount, propposedDuration}, handleBlur, setFieldValue, isValid}) => (
                 <Form className={formContainerStyle}>
                     <CashInput
                         label="Proponowana kwota pożyczki"
@@ -39,7 +39,7 @@ export const OfferForm: React.FC = () => {
                         label="Oprocentowanie roczne"
                         name="annualIntrestRate"
                         sufix=" %"
-                        value={annualIntrestRate}
+                        value={annualInterestRate}
                         onChange={setFieldValue}
                         onBlur={handleBlur}
                     />
