@@ -37,7 +37,7 @@ export const OfferForm: React.FC = () => {
                     />
                     <NumberInput
                         label="Oprocentowanie roczne"
-                        name="annualIntrestRate"
+                        name="annualInterestRate"
                         sufix=" %"
                         value={annualInterestRate}
                         onChange={setFieldValue}

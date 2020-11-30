@@ -3,9 +3,9 @@ import {css} from 'emotion';
 export const accountDetailStyle = css({
     display: 'grid',
     gridTemplateColumns: 'auto auto',
-    width: '80%',
+    width: '100%',
     margin: '0 auto',
-    gridTemplateRows: '2rem',
+    gridTemplateRows: 'auto',
 });
 
 export const spanStyle = css({

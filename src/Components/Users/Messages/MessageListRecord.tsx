@@ -1,8 +1,7 @@
 import React, {useEffect, useState, memo} from 'react';
 import {UserMessageInterface} from '../../../helpers/types';
-import {BiEnvelope, BiEnvelopeOpen} from 'react-icons/bi';
+import {BiEnvelopeOpen} from 'react-icons/bi';
 import {recordStyle, dateStyle, displayNoneStyle, displayBlockStyle, toUpperCaseStyle, shrinkStyle} from './MessageList.styles';
-import {useMessageActions} from '../../../hooks/useMessageActions';
 import {usePushToHistory} from '../../../hooks/usePushToHistory';
 import {ROUTES} from '../../../helpers/ROUTES';
 import {cx} from 'emotion';
@@ -10,7 +9,6 @@ import {cx} from 'emotion';
 export const MessageListRecord: React.FC<UserMessageInterface> = memo(({hasBeenRead, title, message, date, ID}) => {
     const [displayMessage, setDisplayMessage] = useState(false);
     const [detailsStyle, setDetailStyle] = useState(displayNoneStyle);
-    const messageHasBeenRead = useMessageActions();
     const pushToHistory = usePushToHistory();
 
     useEffect(() => {
@@ -18,16 +16,15 @@ export const MessageListRecord: React.FC<UserMessageInterface> = memo(({hasBeenR
     }, [displayMessage]);
 
     const onRecordClick = () => {
-        if (!hasBeenRead) {
-            messageHasBeenRead(ID);
-        }
         !displayMessage ? pushToHistory(ROUTES.USER_MESSAGES + `/${ID}`) : pushToHistory(ROUTES.USER_MESSAGES);
         setDisplayMessage(state => !state);
     };
 
     return (
         <li className={recordStyle} onClick={onRecordClick}>
-            <div>{hasBeenRead ? <BiEnvelopeOpen size="3rem" /> : <BiEnvelope size="3rem" />}</div>
+            <div>
+                <BiEnvelopeOpen size="3rem" />
+            </div>
             <div className={dateStyle}>
                 <p>{date}</p>
             </div>

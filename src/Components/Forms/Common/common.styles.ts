@@ -27,7 +27,7 @@ export const backStylePosition = css({
     top: '-6rem',
     left: '0rem',
     '@media(max-width: 700px)': {
-        top: '-4.8rem',
+        top: '-5.8rem',
         left: '4rem',
     },
 });

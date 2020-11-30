@@ -9,7 +9,7 @@ export const DisplayOffers: React.FC = () => {
         return (
             <div>
                 {userData.ListOfOffers.map((offer: OfferInterface) => {
-                    return <DisplayOffersRecord offer={offer} />;
+                    return <DisplayOffersRecord key={offer.id} offer={offer} />;
                 })}
             </div>
         );
