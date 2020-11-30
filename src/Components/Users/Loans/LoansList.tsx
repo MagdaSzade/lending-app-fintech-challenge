@@ -6,6 +6,7 @@ import {usePushToHistory} from '../../../hooks/usePushToHistory';
 import {startingFilters} from './LoansList.helpers';
 import {ROUTES} from '../../../helpers/ROUTES';
 import {LOAN_STATUS} from '../../../helpers/types';
+import {LoanStub} from './LoanStub';
 
 export const LoansList: React.FC = () => {
     const {userData} = useAppContext();
@@ -27,8 +28,9 @@ export const LoansList: React.FC = () => {
                 break;
         }
     };
-
-    if (userData && userData.ListOfLoans.length > 0) {
+    if (userData && !userData.ListOfLoans) {
+        return <LoanStub />;
+    } else if (userData && userData.ListOfLoans.length > 0) {
         return (
             <div>
                 <select name="loanState" id="loanState" onChange={onSelectChange} value={filter}>

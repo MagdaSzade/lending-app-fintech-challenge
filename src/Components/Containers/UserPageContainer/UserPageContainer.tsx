@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {MessagesList} from '../../Users/Messages/MessagesList';
 import {Profile} from '../../Users/Profile/Profile';
@@ -13,18 +13,14 @@ import {Account} from '../../Users/Account/Account';
 import {OfferForm} from '../../Forms/OfferForm/OfferForm';
 import {userContainerStyle} from './UserPageContainer.styles';
 import {useAsyncUserData} from '../../../hooks/usersActions/useAsyncUserData';
-import {useAppContext} from '../../../hooks/useAppContext';
 import {ROUTES} from '../../../helpers/ROUTES';
 
 export const UserPageContainer: React.FC = () => {
     const getUser = useAsyncUserData();
-    const {isLoggedin, userData} = useAppContext();
 
-    useEffect(() => {
-        if (isLoggedin && userData === null) {
-            getUser();
-        }
-    }, [isLoggedin, getUser, userData]);
+    setInterval(() => {
+        getUser();
+    }, 10000);
 
     return (
         <div className={userContainerStyle}>

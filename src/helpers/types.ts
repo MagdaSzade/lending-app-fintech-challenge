@@ -54,7 +54,7 @@ export interface InquieryInterface {
 }
 
 export interface OfferInterface {
-    createdAt: string;
+    id: string;
     status: OFFER_STATUS;
     loanAmountGiven: number;
     annualIntrestRateGiven: number;
@@ -86,7 +86,6 @@ export interface LoanInterface {
 }
 
 export interface AccountInterface {
-    ID: string;
     accountNumber: string;
     accountState: number;
 }

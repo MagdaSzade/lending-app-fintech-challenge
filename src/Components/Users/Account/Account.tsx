@@ -8,6 +8,7 @@ import {redStyle, greenStyle, accountDetailStyle, spanStyle, buttonsStyle} from 
 
 export const Account: React.FC = () => {
     const {userData} = useAppContext();
+
     if (userData) {
         const {account} = userData;
         const stateStyle = account.accountState >= 0 ? greenStyle : redStyle;

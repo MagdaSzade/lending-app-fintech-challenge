@@ -11,7 +11,7 @@ export const navbarConteinerStyle = css({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'row',
-    '@media (max-width: 500px)': {
+    '@media (max-width: 690px)': {
         flexDirection: 'column',
         backgroundColor: CSS_COLORS.BACKGROUND,
     },

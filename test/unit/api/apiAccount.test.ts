@@ -28,7 +28,7 @@ describe('depositApi', () => {
 
         const request = await depositApi(newAction, id);
         expect(request.data).toEqual(data.data);
-        expect(apiBackend.backend.post).toHaveBeenCalledWith(`/transactions/externalPayment/${id}`, expectedValue);
+        expect(apiBackend.backend.post).toHaveBeenCalledWith(`/transactions/externalPayment?userId=${id}&value=${newAction.value}`);
     });
 });
 
@@ -41,11 +41,10 @@ describe('withdrwaltApi', () => {
         const data = {data: 'mocked data'};
         mocked(apiBackend.backend.post).mockResolvedValue(data);
         const newAction = accountActionInterfaceFactory.build();
-        const expectedValue = {params: newAction};
         const id = 'testId';
 
         const request = await withdrawalApi(newAction, id);
         expect(request.data).toEqual(data.data);
-        expect(apiBackend.backend.post).toHaveBeenCalledWith(`/transactions/externalWithdrawal/${id}`, expectedValue);
+        expect(apiBackend.backend.post).toHaveBeenCalledWith(`/transactions/externalWithdrawal/?userId=${id}&value=${newAction.value}`);
     });
 });

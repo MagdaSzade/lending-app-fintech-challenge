@@ -11,7 +11,6 @@ export const useNewOffer = () => {
 
     const newOffer = async (offer: OfferFormInterface) => {
         offer.lenderId = userData?.userID;
-        console.log(offer);
         setIsFetching(true);
         try {
             await newOfferApi(offer);

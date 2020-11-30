@@ -10,8 +10,6 @@ export const DisplayOffersRecord: React.FC<RecordInterface> = ({offer}) => {
     return (
         <div className={recordContainerStyle}>
             <div>
-                <p>Stworzono:</p>
-                <p>{offer.createdAt}</p>
                 <p>status:</p>
                 <p>{offer.status}</p>
                 <p>{offer.submitionDeadline}</p>
@@ -20,9 +18,9 @@ export const DisplayOffersRecord: React.FC<RecordInterface> = ({offer}) => {
                 <p>Kwota ofertowa</p>
                 <p>{offer.loanAmountGiven.toLocaleString('pl-PL', {style: 'currency', currency: 'PLN'})}</p>
                 <p>Czas ofertowy</p>
-                <p>{offer.loanDurationGiven}</p>
+                <p>{offer.loanDurationGiven} miesiące</p>
                 <p>Oprocentowanie roczne</p>
-                <p>{offer.annualIntrestRateGiven}</p>
+                <p>{offer.annualIntrestRateGiven} %</p>
             </div>
             <div>
                 <p>Kwota zapytania</p>
